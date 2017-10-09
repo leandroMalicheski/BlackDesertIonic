@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="navBar">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ingredient</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="page-ingredient">
+	<h2>{{ingredient.name}}</h2>
+	<ion-item class="ion-item">
+	  <ion-thumbnail class="thumbnail-size" item-start>
+	   	<img class="img-size" src="{{ingredient.icon}}">	
+	  </ion-thumbnail>
+	  A quantidade de comida gerada vária com seu nível em culinária.
+	</ion-item>
+	
+	<form name="formCalc" (ngSubmit)="calculate()">
+		<ion-item class="ion-item-color">
+		    <ion-label floating>Quantidade de {{ingredient.name}}</ion-label>
+			<ion-input type="number" [(ngModel)]="ingredientForm.qty" name="qty" required></ion-input>
+		</ion-item>
+		<button color="navBar" ion-button type="submit" block>Calculate</button>
+	</form>
+	
+	<h3>Comidas</h3>
+	<ion-item class="ion-item-list" *ngFor="let food of filteredFoods">
+	  <ion-thumbnail class="thumbnail-size" item-start>
+	  	<img class="img-size" src="{{food.icon}}">	
+	  </ion-thumbnail>
+	  <b>{{food.name}}</b> : {{food.qtyTotal}}
+	</ion-item>
+</ion-content>
