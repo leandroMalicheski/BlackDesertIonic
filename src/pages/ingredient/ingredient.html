@@ -25,7 +25,7 @@
 	</form>
 	
 	<h3>Comidas</h3>
-	<ion-item class="ion-item-list" *ngFor="let food of filteredFoods">
+	<ion-item class="ion-item-list" *ngFor="let food of filteredFoods" (click)="foodTapped($event, food)">
 	  <ion-thumbnail class="thumbnail-size" item-start>
 	  	<img class="img-size" src="{{food.icon}}">	
 	  </ion-thumbnail>
