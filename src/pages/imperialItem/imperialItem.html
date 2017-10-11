@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="navBar">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Item Imperial</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="page-imperialItem" padding>
+  <h2>{{imperialItem.name}}</h2>
+  <ion-item class="ion-item">
+    <ion-thumbnail class="thumbnail-size" item-start>
+      <img class="img-size" src="{{imperialItem.icon}}">  
+    </ion-thumbnail>
+     <b>Level:</b> {{imperialItem.level}}<br>
+     <b>Local de Venda:</b> {{imperialItem.local}}
+  </ion-item>
+</ion-content>

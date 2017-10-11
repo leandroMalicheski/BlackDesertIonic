@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { FoodCalcPage } from '../pages/foodCalc/foodCalc';
 import { FoodPage } from '../pages/food/food';
 import { IngredientPage } from '../pages/ingredient/ingredient';
+import { ImperialCalcPage } from '../pages/imperialCalc/imperialCalc';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     FoodCalcPage,
     FoodPage,
-    IngredientPage
+    IngredientPage,
+    ImperialCalcPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     FoodCalcPage,
     FoodPage,
-    IngredientPage
+    IngredientPage,
+    ImperialCalcPage
   ],
   providers: [
     StatusBar,
