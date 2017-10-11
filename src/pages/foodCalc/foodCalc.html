@@ -8,13 +8,15 @@
 </ion-header>
 
 <ion-content class="page-foodCalc" padding>
-  <ion-list class="list-structure">
-    <ion-item text-wrap class="item-icon-left list-background">
-      <ion-icon name="restaurant" class="icon-margin"></ion-icon>Comidas<br>
-      <b>Para Todas as Receitas você pode usar a regra geral de substituição:</b><br>
+  <p class="pInformation" text-wrap>
+    <b>Para Todas as Receitas você pode usar a regra geral de substituição:</b><br>
       - 1 ingrediente de classe <b style="color:green">verde</b> pode ser substituido por 2-3 ingredientes da classe branca e vice-versa. <br>
       - 1 ingrediente de classe <b style="color:blue">azul</b> pode ser substituido por 3-5 ingredientes da classe branca e vice-versa. <br>
       - 1 peixe fresco pode ser substituido por 2 peixes secos e vice versa.
+  </p>
+  <ion-list class="list-structure">
+    <ion-item class="item-icon-left list-background">
+      <ion-icon name="restaurant" class="icon-margin"></ion-icon>Comidas<br>
     </ion-item>
     <ion-item class="list-background" *ngFor="let food of foodList" (click)="foodTapped($event, food)">{{food.name}}</ion-item>
     
