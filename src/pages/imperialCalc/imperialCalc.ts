@@ -11,9 +11,7 @@ export class ImperialCalcPage {
   imperialItemList: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	this.imperialItemList = [
-  		{"id":"0","name":"Caixa de Peixe Frito", "icon":"assets/img/imperialItems/friedFishCookingBox.png","level":"Aprendiz 1","local":"Heidel"}
-  	]
+  	this.imperialItemList = JSON.parse(sessionStorage.getItem('imperialItemList'));
   }
 
   itemTapped(event, item){

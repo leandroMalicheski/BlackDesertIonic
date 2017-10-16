@@ -19,7 +19,9 @@
       <ion-icon name="restaurant" class="icon-margin"></ion-icon>Comidas<br>
     </ion-item>
     <ion-item class="list-background" *ngFor="let food of foodList" (click)="foodTapped($event, food)">{{food.name}}</ion-item>
-    
+  </ion-list>
+
+  <ion-list class="list-structure">
     <ion-item class="item-icon-left list-background">
        <ion-icon name="leaf" class="icon-margin"></ion-icon>Ingredientes
     </ion-item>    

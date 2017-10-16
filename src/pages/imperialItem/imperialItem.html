@@ -15,6 +15,25 @@
       <img class="img-size" src="{{imperialItem.icon}}">  
     </ion-thumbnail>
      <b>Level:</b> {{imperialItem.level}}<br>
-     <b>Local de Venda:</b> {{imperialItem.local}}
+     <b>Local de Venda:</b> {{imperialItem.local}}<br>
+     <b>Valor:</b> R$ {{imperialItem.price}}
+  </ion-item>
+  <ion-item class="ion-item" [hidden]="hideResult"><b>Valor Total à Receber:</b> R$ {{imperialItemForm.result}}</ion-item>
+  
+  <form name="formImperialItem" (ngSubmit)="calculate()">
+    <ion-item class="ion-item-color">
+        <ion-label floating>Quantidade de {{imperialItem.name}}</ion-label>
+      <ion-input type="number" [(ngModel)]="imperialItemForm.qty" name="qty" required></ion-input>
+    </ion-item>
+    <button color="navBar" ion-button type="submit" block>Calculate</button>
+  </form>  
+  
+  <h3>Item Necessário</h3>
+  <ion-item class="ion-item" (click)="itemTapped()">
+    <ion-thumbnail class="thumbnail-size" item-start>
+      <img class="img-size" src="{{craftMaterial.icon}}">  
+    </ion-thumbnail>
+     {{craftMaterial.name}}<br>
+     <b>Quantidade Necessária:</b> {{imperialItemForm.qtyToCraft}}
   </ion-item>
 </ion-content>
