@@ -35,6 +35,10 @@ export class FoodPage {
       this.navCtrl.push(IngredientPage, {
         item: item
       });
+    }else if(item.hasFoodPage){
+       this.navCtrl.push(FoodPage, {
+        item: item
+      });
     }
   }
 
