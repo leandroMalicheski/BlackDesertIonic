@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
+import { IngredientPage } from '../ingredient/ingredient';
 
 @Component({
   selector: 'food',
@@ -8,29 +9,59 @@ import { NavController, NavParams} from 'ionic-angular';
 
 export class FoodPage {
   food: any;
-  ingredients: any;
   filteredIngredients: any;
   foodForm: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	this.food = navParams.get('item');
-  	this.ingredients = navParams.get('ingredients');
-  	this.filteredIngredients = [];
-  	this.foodForm = {};
-  	for (let i = 0; i < this.food.ingredients.length; i++) {
-  		var ingredientTemp = this.food.ingredients[i];
-  		var ingredient = this.ingredients[ingredientTemp.id]
-  			ingredient.qty = ingredientTemp.qty;
-  			ingredient.qtyTotal = ingredientTemp.qty;
-  		this.filteredIngredients.push(ingredient);
-  	}
-  }
-  calculate() {
-	for (let i = 0; i < this.filteredIngredients.length; i++) {
-		var ingredient = this.filteredIngredients[i];
-			ingredient.qtyTotal = this.foodForm.qty * ingredient.qty;
-		this.filteredIngredients[i] = ingredient;
-	}
+  	if(navParams.get('item').ingredients){
+      this.food = navParams.get('item');
+    }else{  
+      this.food = this.getFood(navParams.get('item').id);
+    }
+    this.foodForm = {};
+  	this.filteredIngredients = this.filterIngredients(this.food.ingredients);  	
   }
 
+  calculate() {
+  	for (let i = 0; i < this.filteredIngredients.length; i++) {
+  		let ingredient = this.filteredIngredients[i];
+  			ingredient.qtyTotal = this.foodForm.qty * ingredient.qty;
+  		this.filteredIngredients[i] = ingredient;
+  	}
+  }
+
+  ingredientTapped(event, item){
+    if(item.hasIngredientPage){
+      this.navCtrl.push(IngredientPage, {
+        item: item
+      });
+    }else if(item.hasFoodPage){
+       this.navCtrl.push(FoodPage, {
+        item: item
+      });
+    }
+  }
+
+  getFood(itemId) {
+    var foodList = JSON.parse(sessionStorage.getItem('foodList'));
+    for (var i = 0; i < foodList.length; i++) {
+      if (foodList[i].id === itemId) {
+        return foodList[i];
+      }
+    }
+  }
+  filterIngredients(ingredientsItemList){
+    let ingredients = JSON.parse(sessionStorage.getItem('ingredients'));
+    let filteredIngredients = [];
+
+    for (let i = 0; i < ingredientsItemList.length; i++) {
+      let ingredientTemp = ingredientsItemList[i];
+      let ingredient = ingredients[ingredientTemp.id];
+          ingredient.qty = ingredientTemp.qty;
+          ingredient.qtyTotal = ingredientTemp.qty;
+
+      filteredIngredients.push(ingredient);
+    }
+    return filteredIngredients;
+  }
 }
