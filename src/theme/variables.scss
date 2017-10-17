@@ -21,8 +21,9 @@ $app-direction: ltr;
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
-
+ion-content {text-align: center; background: linear-gradient(to bottom right, #3a1e07, black);}
+h2{color: white;}
+h3{color: white;}
 
 
 // Named Color Variables

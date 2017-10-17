@@ -9,7 +9,7 @@ import { FoodPage } from '../food/food';
 
 export class ImperialItemPage {
   imperialItem: any;
-  craftMaterial: {id:string, name:string, icon:string, hasFoodPage:string};
+  craftMaterial: any;
   imperialItemForm: any;
   hideResult: boolean;
 
@@ -25,15 +25,12 @@ export class ImperialItemPage {
 
   setImperialItemFood(itemId){
   	let foods = JSON.parse(sessionStorage.getItem('foods'));
-  	let craftMaterial = {};
+  	let craftMaterial : {id:string, name:string, icon:string, hasFoodPage:boolean};
 
   	for (let i = 0; i < foods.length; i++) {
       let food = foods[i];
       if(food.id === itemId){
-      	craftMaterial.id = food.id;
-      	craftMaterial.name = food.name;
-      	craftMaterial.icon = food.icon;
-        craftMaterial.hasFoodPage = food.hasFoodPage;
+        craftMaterial = {id : food.id, name : food.name, icon : food.icon, hasFoodPage : food.hasFoodPage}
       }
     }
     return craftMaterial;

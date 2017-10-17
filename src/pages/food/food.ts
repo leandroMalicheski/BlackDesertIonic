@@ -11,6 +11,7 @@ export class FoodPage {
   food: any;
   filteredIngredients: any;
   foodForm: any;
+  hideOtherCraftResult: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	if(navParams.get('item').ingredients){
@@ -19,7 +20,7 @@ export class FoodPage {
       this.food = this.getFood(navParams.get('item').id);
     }
     this.foodForm = {};
-  	this.filteredIngredients = this.filterIngredients(this.food.ingredients);  	
+  	this.filteredIngredients = this.filterIngredients(this.food.ingredients);
   }
 
   calculate() {

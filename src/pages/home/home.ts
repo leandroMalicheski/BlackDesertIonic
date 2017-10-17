@@ -12,7 +12,7 @@ export class HomePage {
   	  {"id":"0", "name":"Cereais", "icon":"assets/img/foodAndIgredients/corn.png", "foods":[{"id":"0","qty":5}]},
       {"id":"7", "name":"Carne de Frango", "icon":"assets/img/foodAndIgredients/birdMeat.png", "foods":[{"id":"1","qty":4}]},
       {"id":"14", "name":"Ovo", "icon":"assets/img/foodAndIgredients/egg.png", "foods":[{"id":"2","qty":3}]},
-      {"id":"5", "name":"Peixe Seco", "icon":"assets/img/foodAndIgredients/driedFish.png","foods":[{"id":"1","qty":2},{"id":"4","qty":2}]},
+      {"id":"5", "name":"Peixe Seco", "icon":"assets/img/foodAndIgredients/driedFish.png","foods":[{"id":"1","qty":2},{"id":"4","qty":2},{"id":"5","qty":2}]},
   	]
     sessionStorage.setItem('ingredientsList', JSON.stringify(ingredientsList));
     
@@ -32,7 +32,8 @@ export class HomePage {
       {"id":"12","name":"Vinho","icon":"assets/img/foodAndIgredients/wine.png","hasIngredientPage":false},
       {"id":"13","name":"Sal","icon":"assets/img/foodAndIgredients/salt.png","hasIngredientPage":false},
       {"id":"14","name":"Ovo","icon":"assets/img/foodAndIgredients/egg.png","hasIngredientPage":true},
-      {"id":"15","name":"Oleo de Fritura","icon":"assets/img/foodAndIgredients/fryingOil.png","hasIngredientPage":false},      
+      {"id":"15","name":"Oleo de Fritura","icon":"assets/img/foodAndIgredients/fryingOil.png","hasIngredientPage":false},     
+      {"id":"16","name":"Molho Branco","icon":"assets/img/foodAndIgredients/whiteSauce.png","hasIngredientPage":false},       
   	];
     sessionStorage.setItem('ingredients', JSON.stringify(ingredients));
 
@@ -42,6 +43,8 @@ export class HomePage {
       {"id":"2", "name":"Ovo Cozido", "level":"Iniciante 6", "ingredients":[{"id":"14", "qty":3},{"id":"1", "qty":6},{"id":"12", "qty":1},{"id":"13", "qty":1}], "icon":"assets/img/foodAndIgredients/boiledEgg.png"},
       {"id":"3", "name":"Aveia", "level":"Aprendiz 1","ingredients":[{"id":"8","qty":9},{"id":"9","qty":3},{"id":"10","qty":3},{"id":"11","qty":2}],"icon":"assets/img/foodAndIgredients/oatmealA.png"},
       {"id":"4", "name":"Peixe Frito", "level":"Aprendiz 1","ingredients":[{"id":"8","qty":3},{"id":"5","qty":2},{"id":"15","qty":2}],"icon":"assets/img/foodAndIgredients/friedFish.png"},
+      {"id":"5", "name":"Salgado de File de Peixe", "level":"Aprendiz 1","ingredients":[{"id":"5","qty":2},{"id":"16","qty":3},{"id":"8","qty":7},{"id":"13","qty":2}],"icon":"assets/img/foodAndIgredients/fishFilletChips.png"},
+      {"id":"6", "name":"Guisado de Carne", "level":"Iniciante 1","ingredients":[{"id":"4","qty":5},{"id":"8","qty":2},{"id":"12","qty":2},{"id":"1","qty":3}],"icon":"assets/img/foodAndIgredients/meatStew.png"},
     ];
     sessionStorage.setItem('foodList', JSON.stringify(foodList));
 
@@ -51,12 +54,16 @@ export class HomePage {
       {"id":"2", "name":"Ovo Cozido", "icon":"assets/img/foodAndIgredients/boiledEgg.png", "hasFoodPage":true},
       {"id":"3", "name":"Aveia", "icon":"assets/img/foodAndIgredients/oatmealA.png", "hasFoodPage":true},
       {"id":"4", "name":"Peixe Frito", "icon":"assets/img/foodAndIgredients/friedFish.png", "hasFoodPage":true},
-      
+      {"id":"5", "name":"Salgado de File de Peixe", "icon":"assets/img/foodAndIgredients/fishFilletChips.png", "hasFoodPage":true},
+      {"id":"6", "name":"Guisado de Carne", "icon":"assets/img/foodAndIgredients/meatStew.png", "hasFoodPage":true},
     ];
     sessionStorage.setItem('foods', JSON.stringify(foods));  
 
     let imperialItemList = [
-  		{"id":"0","name":"Caixa de Peixe Frito", "icon":"assets/img/imperialItems/friedFishCookingBox.png","level":"Aprendiz 1","local":"Heidel","cratfItemId":"4","qtyToCraft":20, "hasFoodPage":true, "price":125000}
+  		{"id":"0","name":"Caixa de Peixe Frito", "icon":"assets/img/imperialItems/friedFishCookingBox.png","level":"Aprendiz 1","local":"Heidel, Altinova e Calpheon","cratfItemId":"4","qtyToCraft":20, "hasFoodPage":true, "price":125000},
+      {"id":"1","name":"Caixa Ovo Cozido", "icon":"assets/img/imperialItems/boiledEggCookingBox.png","level":"Aprendiz 1","local":"Heidel, Altinova e Calpheon","cratfItemId":"2","qtyToCraft":20, "hasFoodPage":true, "price":125000},
+      {"id":"2","name":"Caixa de Salgado de File de Peixe", "icon":"assets/img/imperialItems/fishFilletCookingBox.png","level":"Proficiente 1","local":"Heidel, Altinova e Calpheon","cratfItemId":"5","qtyToCraft":20, "hasFoodPage":true, "price":125000},
+      {"id":"3","name":"Caixa de Guisado de Carne", "icon":"assets/img/imperialItems/meatStewCookingBox.png","level":"Aprendiz 1","local":"Heidel, Altinova e Calpheon","cratfItemId":"6","qtyToCraft":20, "hasFoodPage":true, "price":125000},
   	];
 	sessionStorage.setItem('imperialItemList', JSON.stringify(imperialItemList));    	
   }

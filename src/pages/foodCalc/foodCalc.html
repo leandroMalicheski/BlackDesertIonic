@@ -15,14 +15,14 @@
       - 1 peixe fresco pode ser substituido por 2 peixes secos e vice versa.
   </p>
   <ion-list class="list-structure">
-    <ion-item class="item-icon-left list-background">
+    <ion-item>
       <ion-icon name="restaurant" class="icon-margin"></ion-icon>Comidas<br>
     </ion-item>
     <ion-item class="list-background" *ngFor="let food of foodList" (click)="foodTapped($event, food)">{{food.name}}</ion-item>
   </ion-list>
 
   <ion-list class="list-structure">
-    <ion-item class="item-icon-left list-background">
+    <ion-item>
        <ion-icon name="leaf" class="icon-margin"></ion-icon>Ingredientes
     </ion-item>    
     <ion-item class="list-background" *ngFor="let ingredient of ingredientsList" (click)="ingredientTapped($event, ingredient)">{{ingredient.name}}</ion-item>

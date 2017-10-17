@@ -13,7 +13,7 @@
 	  Para que seja criada a caixa de item para venda Imperial, basta conter os itens necessários, clicar em Processar no seu inventário e processar selecionando os icones imperiais de comida e alquimia.
   </p>
   <ion-list class="list-structure">
-    <ion-item class="item-icon-left list-background">
+    <ion-item>
       <ion-icon name="cube" class="icon-margin"></ion-icon>Itens<br>
     </ion-item>
     <ion-item class="list-background" *ngFor="let item of imperialItemList" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
