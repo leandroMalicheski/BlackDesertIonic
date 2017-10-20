@@ -31,4 +31,8 @@
 	  </ion-thumbnail>
 	  <b>{{ingredient.name}}</b> : {{ingredient.qtyTotal}}
 	</ion-item>
+	<h3 *ngIf="food.plusCrafted" >Resultados Adicionais</h3>
+	<ion-item class="ion-item" *ngFor="let food of food.plusCrafted">
+		{{food.name}}
+	</ion-item>
 </ion-content>
