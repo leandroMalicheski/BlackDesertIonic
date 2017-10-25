@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { FoodCalcPage } from '../pages/foodCalc/foodCalc';
+import { IngredientCalcPage } from '../pages/ingredientCalc/ingredientCalc';
 import { ImperialCookingCalcPage } from '../pages/imperialCookingCalc/imperialCookingCalc';
 
 @Component({
@@ -24,7 +25,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Comidas', component: FoodCalcPage},
-      { title: 'Cozinha Imperial', component: ImperialCookingCalcPage}
+      { title: 'Ingredientes', component: IngredientCalcPage},
+      { title: 'Culinária Imperial', component: ImperialCookingCalcPage}
     ];
 
   }
