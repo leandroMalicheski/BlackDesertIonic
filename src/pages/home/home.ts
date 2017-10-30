@@ -100,13 +100,21 @@ export class HomePage {
 	  sessionStorage.setItem('imperialCookingList', JSON.stringify(imperialCookingList));    	
 
     let tradeList = [
-      {"id":"0","name":"Caixa de Minério de Chumbo","workshopLevel":1,"value":1590,"itensToCraft":[{"id":"0","qty":10},{"id":"1","qty":1}],"icon":"assets/img/trades/crates/leadOreCrate.png"}
+      {"id":"0","name":"Caixa de Minério de Chumbo","workshopLevel":1,"value":1590,"itensToCraft":[{"id":"0","qty":10},{"id":"1","qty":1}],"icon":"assets/img/trades/crates/leadOreCrate.png"},
+      {"id":"1","name":"Caixa de Minério de Cobre","workshopLevel":1,"value":1410,"itensToCraft":[{"id":"2","qty":10},{"id":"1","qty":1}],"icon":"assets/img/trades/crates/copperOreCrate.png"},
+      {"id":"2","name":"Caixa de Minério de Estanho","workshopLevel":1,"value":1530,"itensToCraft":[{"id":"3","qty":10},{"id":"1","qty":1}],"icon":"assets/img/trades/crates/tinOreCrate.png"},
+      {"id":"3","name":"Caixa de Minério de Ferro","workshopLevel":1,"value":1530,"itensToCraft":[{"id":"4","qty":10},{"id":"1","qty":1}],"icon":"assets/img/trades/crates/ironOreCrate.png"},
+      {"id":"3","name":"Caixa de Minério de Zinco","workshopLevel":1,"value":1650,"itensToCraft":[{"id":"5","qty":10},{"id":"1","qty":1}],"icon":"assets/img/trades/crates/zincOreCrate.png"},
     ]
     sessionStorage.setItem('tradeList', JSON.stringify(tradeList));     
 
     let itemsList = [
-      {"id":"0","name":"Minério de Zinco","icon":"assets/img/trades/items/leadOre.png"},
+      {"id":"0","name":"Minério de Chumbo","icon":"assets/img/trades/items/leadOre.png"},
       {"id":"1","name":"Pó de Pedra Preta","icon":"assets/img/trades/items/blackStonePowder.png"},
+      {"id":"2","name":"Minério de Cobre","icon":"assets/img/trades/items/copperOre.png"},
+      {"id":"3","name":"Minério de Estanho","icon":"assets/img/trades/items/tinOre.png"},
+      {"id":"4","name":"Minério de Ferro","icon":"assets/img/trades/items/ironOre.png"},
+      {"id":"5","name":"Minério de Zinco","icon":"assets/img/trades/items/zincOre.png"},
     ]    
     sessionStorage.setItem('itemsList', JSON.stringify(itemsList));     
   }
