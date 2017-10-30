@@ -10,6 +10,8 @@ import { IngredientPage } from '../pages/ingredient/ingredient';
 import { IngredientCalcPage } from '../pages/ingredientCalc/ingredientCalc';
 import { ImperialCookingCalcPage } from '../pages/imperialCookingCalc/imperialCookingCalc';
 import { ImperialItemPage } from '../pages/imperialItem/imperialItem';
+import { TradeCalcPage } from '../pages/tradeCalc/tradeCalc';
+import { TradeItemPage } from '../pages/tradeItem/tradeItem';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +25,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FoodPage,
     IngredientPage,
     ImperialCookingCalcPage,
-    ImperialItemPage
+    ImperialItemPage,
+    TradeCalcPage,
+    TradeItemPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FoodPage,
     IngredientPage,
     ImperialCookingCalcPage,
-    ImperialItemPage
+    ImperialItemPage,
+    TradeCalcPage,
+    TradeItemPage
   ],
   providers: [
     StatusBar,

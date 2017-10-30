@@ -7,7 +7,6 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content class="page-imperialItem" padding>
   <h2>{{imperialItem.name}}</h2>
   <ion-item class="ion-item" text-wrap>
@@ -16,9 +15,9 @@
     </ion-thumbnail>
      <b>Level:</b> {{imperialItem.level}}<br>
      <b>Local de Venda:</b> {{imperialItem.local}}<br>
-     <b>Valor:</b> R$ {{imperialItem.price}}
+     <b>Valor:</b> R$ {{imperialItem.value}}
   </ion-item>
-  <ion-item class="ion-item" [hidden]="hideResult"><b>Valor Total à Receber:</b> R$ {{imperialItemForm.result}}</ion-item>
+  <ion-item class="ion-item" [hidden]="hideResult"><b>Valor Aproximado à Receber:</b> R$ {{imperialItemForm.result}}</ion-item>
   
   <form name="formImperialItem" (ngSubmit)="calculate()">
     <ion-item class="ion-item">
@@ -28,7 +27,7 @@
     <button color="navBar" ion-button type="submit" block>Calculate</button>
   </form>  
   
-  <h3>Item Necessário</h3>
+  <h3>Item(s) Necessário(s)</h3>
   <ion-item class="ion-item" (click)="itemTapped()">
     <ion-thumbnail class="thumbnail-size" item-start>
       <img class="img-size" src="{{craftMaterial.icon}}">  

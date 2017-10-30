@@ -24,7 +24,7 @@
 		<button color="navBar" ion-button type="submit" block>Calculate</button>
 	</form>
 	
-	<h3>Ingredientes</h3>
+	<h3>Ingrediente(s)</h3>
 	<ion-item class="ion-item-list" *ngFor="let ingredient of filteredIngredients" (click)="ingredientTapped($event, ingredient)">
 	  <ion-thumbnail class="thumbnail-size" item-start>
 	  	<img class="img-size" src="{{ingredient.icon}}">	

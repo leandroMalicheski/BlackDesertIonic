@@ -87,21 +87,28 @@ export class HomePage {
 
     let imperialCookingList = [
   		{"id":"0","name":"Baú de Peixe Frito", "icon":"assets/img/imperialItems/friedFishCookingBox.png","level":"Aprendiz","local":"Heidel, Altinova e Calpheon","cratfItemId":"4","qtyToCraft":20, "hasFoodPage":true, "price":150000},
-      {"id":"1","name":"Baú de Ovo Cozido de Pássaro", "icon":"assets/img/imperialItems/boiledEggCookingBox.png","level":"Aprendiz","local":"Heidel, Altinova e Calpheon","cratfItemId":"2","qtyToCraft":20, "hasFoodPage":true, "price":138750},      
+      {"id":"1","name":"Baú de Ovo Cozido de Pássaro", "icon":"assets/img/imperialItems/boiledEggCookingBox.png","level":"Aprendiz","local":"Heidel, Altinova e Calpheon","cratfItemId":"2","qtyToCraft":20, "hasFoodPage":true, "price":138000},      
       {"id":"2","name":"Baú de Sopa de Carne", "icon":"assets/img/imperialItems/meatStewCookingBox.png","level":"Aprendiz","local":"Heidel, Altinova e Calpheon","cratfItemId":"6","qtyToCraft":20, "hasFoodPage":true, "price":195000},
       {"id":"3","name":"Baú de File de Peixe", "icon":"assets/img/imperialItems/fishFilletCookingBox.png","level":"Proficiente","local":"Heidel, Altinova e Calpheon","cratfItemId":"5","qtyToCraft":20, "hasFoodPage":true, "price":160000},
-      {"id":"4","name":"Baú de Pudim de Fruta", "icon":"assets/img/imperialItems/fruitPuddingCookingBox.png","level":"Proficiente","local":"Heidel, Altinova e Calpheon","cratfItemId":"11","qtyToCraft":20, "hasFoodPage":true, "price":212500},
-      {"id":"5","name":"Baú de Pão Macio", "icon":"assets/img/imperialItems/softBreadCookingBox.png","level":"Proficiente","local":"Heidel, Altinova e Calpheon","cratfItemId":"12","qtyToCraft":20, "hasFoodPage":true, "price":192500},
-      {"id":"6","name":"Baú de Cheiroso de Chá com Aroma Fino", "icon":"assets/img/imperialItems/goodSmellingCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"9","qtyToCraft":30, "hasFoodPage":true, "price":217500},
+      {"id":"4","name":"Baú de Pudim de Fruta", "icon":"assets/img/imperialItems/fruitPuddingCookingBox.png","level":"Proficiente","local":"Heidel, Altinova e Calpheon","cratfItemId":"11","qtyToCraft":20, "hasFoodPage":true, "price":212000},
+      {"id":"5","name":"Baú de Pão Macio", "icon":"assets/img/imperialItems/softBreadCookingBox.png","level":"Proficiente","local":"Heidel, Altinova e Calpheon","cratfItemId":"12","qtyToCraft":20, "hasFoodPage":true, "price":192000},
+      {"id":"6","name":"Baú de Cheiroso de Chá com Aroma Fino", "icon":"assets/img/imperialItems/goodSmellingCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"9","qtyToCraft":30, "hasFoodPage":true, "price":217000},
       {"id":"7","name":"Baú de Omelete", "icon":"assets/img/imperialItems/omeleteCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"7","qtyToCraft":40, "hasFoodPage":true, "price":205000},
-      {"id":"8","name":"Baú de Carne", "icon":"assets/img/imperialItems/steakCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"10","qtyToCraft":20, "hasFoodPage":true, "price":242500},      
+      {"id":"8","name":"Baú de Carne", "icon":"assets/img/imperialItems/steakCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"10","qtyToCraft":20, "hasFoodPage":true, "price":242000},      
       {"id":"9","name":"Baú de Torta de Carne", "icon":"assets/img/imperialItems/meatPieCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"13","qtyToCraft":30, "hasFoodPage":true, "price":210000},      
-     
-      
-      
-
   	];
 	  sessionStorage.setItem('imperialCookingList', JSON.stringify(imperialCookingList));    	
+
+    let tradeList = [
+      {"id":"0","name":"Caixa de Minério de Chumbo","workshopLevel":1,"value":1590,"itensToCraft":[{"id":"0","qty":10},{"id":"1","qty":1}],"icon":"assets/img/trades/crates/leadOreCrate.png"}
+    ]
+    sessionStorage.setItem('tradeList', JSON.stringify(tradeList));     
+
+    let itemsList = [
+      {"id":"0","name":"Minério de Zinco","icon":"assets/img/trades/items/leadOre.png"},
+      {"id":"1","name":"Pó de Pedra Preta","icon":"assets/img/trades/items/blackStonePowder.png"},
+    ]    
+    sessionStorage.setItem('itemsList', JSON.stringify(itemsList));     
   }
 
 }

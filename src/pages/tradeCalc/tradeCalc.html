@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="navBar">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Trade</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="page-TradeCalc" padding>
+  <ion-list class="list-structure">
+    <ion-item>
+      <ion-icon name="globe" class="icon-margin"></ion-icon>Itens<br>
+    </ion-item>
+    <ion-item class="list-background" *ngFor="let item of tradeList" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
+  </ion-list>
+</ion-content>

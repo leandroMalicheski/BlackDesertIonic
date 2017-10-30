@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="navBar">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Trade Item</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-tradeItem" padding>
+  <h2>{{tradeItem.name}}</h2>
+  <ion-item class="ion-item" text-wrap>
+    <ion-thumbnail class="thumbnail-size" item-start>
+      <img class="img-size" src="{{tradeItem.icon}}">  
+    </ion-thumbnail>
+    <b>Nível de oficina necessário:</b> {{tradeItem.workshopLevel}}
+    <b>Valor:</b> R$ {{tradeItem.value}}
+  </ion-item>
+  
+  <form name="formImperialItem" (ngSubmit)="calculate()">
+    <ion-item class="ion-item">
+        <ion-label floating>Quantidade de {{tradeItem.name}}</ion-label>
+      <ion-input type="number" [(ngModel)]="tradeItemForm.qty" name="qty" required></ion-input>
+    </ion-item>
+    <ion-item class="ion-item">
+        <ion-label floating>Tempo Aproximado em Minutos para Fabricar</ion-label>
+      <ion-input type="number" [(ngModel)]="tradeItemForm.minutes" name="minutes"></ion-input>
+    </ion-item>
+    <button color="navBar" ion-button type="submit" block>Calculate</button>
+  </form>   
+  <ion-item class="ion-item" [hidden]="hideResult"><b>Valor Total à Receber:</b> R$ {{tradeItemForm.result}}</ion-item>
+  <ion-item class="ion-item" [hidden]="hideResultTime"><b>Tempo Aproximado Gasto:</b> 
+    <span [hidden]="hideHours"> {{tradeItemForm.resultHours}} <b>Hora(s)</b></span>
+    <span [hidden]="hideBoth"> e</span>
+    <span [hidden]="hideMinutes"> {{tradeItemForm.resultMinutes}} <b>Minuto(s)</b></span> 
+  </ion-item>
+  <h3 *ngIf="filteredItens" >Itens Necessários</h3>
+  <ion-item class="ion-item-list" *ngFor="let item of filteredItens">
+    <ion-thumbnail class="thumbnail-size" item-start>
+      <img class="img-size" src="{{item.icon}}">  
+    </ion-thumbnail>
+    <b>{{item.name}}</b> : {{item.qtyTotal}}
+  </ion-item>
+</ion-content>
