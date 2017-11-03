@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { UtilsProvider } from '../../providers/utils/utils';
 
 @Component({
   selector: 'tradeItem',
@@ -17,7 +18,7 @@ export class TradeItemPage {
   hideBoth: boolean;
   hideMinutes: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public utilsProvider: UtilsProvider) {
   	this.tradeItem = navParams.get('item');
     this.filteredItens = this.filterItensToCraft(this.tradeItem.itensToCraft);
 
@@ -30,29 +31,14 @@ export class TradeItemPage {
     let totalTimeMinutes = this.tradeItemForm.qty * this.tradeItemForm.minutes;
     this.tradeItemForm.resultHours = totalTimeMinutes / 60;
     this.tradeItemForm.resultMinutes = totalTimeMinutes % 60;
-    this.tradeItemForm.result = this.tradeItemForm.qty * this.tradeItem.value;
+    this.tradeItemForm.result = this.utilsProvider.setItemValue(this.tradeItemForm.qty * this.tradeItem.value);
     this.tradeItemForm.resultHours = this.convertHoursToStr(this.tradeItemForm.resultHours);
 
     for(let i = 0; i < this.filteredItens.length; i++){
       this.filteredItens[i].qtyTotal = this.filteredItens[i].qty * this.tradeItemForm.qty;
     }
 
-    if(this.tradeItemForm.resultHours >= 1 && this.tradeItemForm.resultMinutes > 1){
-      this.showAllResults();
-    }else if(totalTimeMinutes === 0){
-      this.hideAllResults();
-      this.hideResult = false;
-    }else{
-      if(this.tradeItemForm.resultHours >= 1){
-        this.hideHours = false;
-        this.hideMinutes = true;
-      }else if(this.tradeItemForm.resultMinutes > 1){
-        this.hideMinutes = false;
-        this.hideHours = true;
-      }  
-      this.hideResultTime = false;
-      this.hideResult = false;
-    }
+    this.showFilter(totalTimeMinutes);
   }
 
   filterItensToCraft(itemListToCraft){
@@ -91,5 +77,24 @@ export class TradeItemPage {
       itemStr = itemStr.substr(0,itemStr.lastIndexOf("."));  
     }    
     return itemStr;
+  }
+
+  showFilter(totalTimeMinutes){
+    if(this.tradeItemForm.resultHours >= 1 && this.tradeItemForm.resultMinutes > 1){
+      this.showAllResults();
+    }else if(totalTimeMinutes === 0){
+      this.hideAllResults();
+      this.hideResult = false;
+    }else{
+      if(this.tradeItemForm.resultHours >= 1){
+        this.hideHours = false;
+        this.hideMinutes = true;
+      }else if(this.tradeItemForm.resultMinutes > 1){
+        this.hideMinutes = false;
+        this.hideHours = true;
+      }  
+      this.hideResultTime = false;
+      this.hideResult = false;
+    }
   }
 }

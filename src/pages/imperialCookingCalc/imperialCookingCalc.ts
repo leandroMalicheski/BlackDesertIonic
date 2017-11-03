@@ -8,16 +8,12 @@ import { ImperialItemPage } from '../imperialItem/imperialItem';
 })
 export class ImperialCookingCalcPage {
   
-  imperialItemList: Array<any>;
+  imperialItemList: Array<{id:string, name:string, icon:string, level:string, local:string, cratfItemId:string, qtyToCraft:string, hasFoodPage:boolean, price:number}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.imperialItemList = JSON.parse(sessionStorage.getItem('imperialCookingList'));
   }
 
-  itemTapped(event, item){
-  	this.navCtrl.push(ImperialItemPage, {
-      item: item
-    });
-  }
+  itemTapped(event, item){this.navCtrl.push(ImperialItemPage, {item: item});}
 
 }

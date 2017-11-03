@@ -10,7 +10,7 @@ import { FoodPage } from '../food/food';
 export class IngredientPage {
   ingredient: any;
   filteredFoods: any;
-  ingredientForm: any;
+  ingredientForm: {qty:int};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     if(navParams.get('item').foods){
@@ -21,27 +21,23 @@ export class IngredientPage {
     this.ingredientForm = {};
     this.filteredFoods = this.filterFoods(this.ingredient.foods)
   }
+
   calculate() {
   	for (let i = 0; i < this.filteredFoods.length; i++) {
   		var food = this.filteredFoods[i];
-  			food.qtyTotal = this.ingredientForm.qty / food.qty;
+  			  food.qtyTotal = this.ingredientForm.qty / food.qty;
   		this.filteredFoods[i] = food;
   	}
   }
+
   foodTapped(event, item){
-    if(item.hasFoodPage){
-      this.navCtrl.push(FoodPage, {
-        item: item
-      });
-    }
+    if(item.hasFoodPage){this.navCtrl.push(FoodPage, {item: item});}
   }
 
   getIngredient(itemId) {
     var ingredientList = JSON.parse(sessionStorage.getItem('ingredientsList'));
     for (var i = 0; i < ingredientList.length; i++) {
-      if (ingredientList[i].id === itemId) {
-        return ingredientList[i];
-      }
+      if (ingredientList[i].id === itemId) {return ingredientList[i];}
     }
   }
 

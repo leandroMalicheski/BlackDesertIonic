@@ -17,10 +17,6 @@ export class IngredientCalcPage {
   	this.ingredients = JSON.parse(sessionStorage.getItem('ingredients'));
   }
 
-  ingredientTapped(event, item) {
-    this.navCtrl.push(IngredientPage, {
-      item: item,
-    });
-  }
+  ingredientTapped(event, item) {this.navCtrl.push(IngredientPage, {item: item});}
 
 }

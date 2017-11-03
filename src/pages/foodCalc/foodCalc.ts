@@ -16,10 +16,6 @@ export class FoodCalcPage {
   	this.foods = JSON.parse(sessionStorage.getItem('foods'));    
   }
 
-  foodTapped(event, item) {
-    this.navCtrl.push(FoodPage, {
-      item: item,
-    });
-  }
+  foodTapped(event, item) {this.navCtrl.push(FoodPage, {item: item});}
 
 }

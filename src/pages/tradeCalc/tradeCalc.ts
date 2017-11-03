@@ -14,10 +14,6 @@ export class TradeCalcPage {
   	this.tradeList = JSON.parse(sessionStorage.getItem('tradeList'));
   }
 
-   itemTapped(event, item) {
-    this.navCtrl.push(TradeItemPage, {
-      item: item,
-    });
-  }
+   itemTapped(event, item) {this.navCtrl.push(TradeItemPage, {item: item});}
 
 }
