@@ -8,6 +8,7 @@ import { FoodCalcPage } from '../pages/foodCalc/foodCalc';
 import { IngredientCalcPage } from '../pages/ingredientCalc/ingredientCalc';
 import { ImperialCookingCalcPage } from '../pages/imperialCookingCalc/imperialCookingCalc';
 import { TradeCalcPage } from '../pages/tradeCalc/tradeCalc';
+import { HorsePage } from '../pages/horse/horse';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +29,8 @@ export class MyApp {
       { title: 'Comidas', component: FoodCalcPage},
       { title: 'Ingredientes', component: IngredientCalcPage},
       { title: 'Culinária Imperial', component: ImperialCookingCalcPage},
-      { title: 'Comercio de Itens', component: TradeCalcPage}
+      { title: 'Comercio de Itens', component: TradeCalcPage},
+      { title: 'Cavalos', component: HorsePage}
     ];
 
   }

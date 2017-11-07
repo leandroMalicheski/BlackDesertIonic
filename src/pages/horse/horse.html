@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="navBar">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Horses</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-horses" padding>
+  <h2>{{tierTitle}}</h2>
+  <ion-item class="ion-item">
+    <ion-select [(ngModel)]="filter" interface="popover" (ionChange)='updateList()'>
+        <ion-option value="All">All</ion-option>
+        <ion-option value="1" selected="true">Tier 1</ion-option>
+        <ion-option value="2">Tier 2</ion-option>
+        <ion-option value="3">Tier 3</ion-option>
+        <ion-option value="4">Tier 4</ion-option>
+        <ion-option value="5">Tier 5</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-grid>
+    <ion-row *ngFor="let horse of filteredList" responsive-sm wrap>
+      <ion-col>
+        <ion-card class="ion-card">
+          <img src="{{horse.icon}}" class="ion-card-img" />
+          <ion-card-content>
+            <ion-card-title>Tier {{horse.tier}}</ion-card-title>
+          </ion-card-content>
+          <ion-item class="ion-item">
+            <ion-icon name='speedometer' class="ion-icon-color" item-start></ion-icon>
+            Velocidade
+            <ion-badge class="ion-att-color" item-end>{{horse.vel}}%</ion-badge>
+          </ion-item>
+          <ion-item class="ion-item">
+            <ion-icon name='stopwatch' class="ion-icon-color" item-start></ion-icon>
+            Aceleração
+            <ion-badge class="ion-att-color" item-end>{{horse.acc}}%</ion-badge>
+          </ion-item>
+          <ion-item class="ion-item">
+            <ion-icon name='timer' class="ion-icon-color" item-start></ion-icon>
+            Agilidade
+            <ion-badge class="ion-att-color" item-end>{{horse.agi}}%</ion-badge>
+          </ion-item>
+          <ion-item class="ion-item">
+            <ion-icon name='podium' class="ion-icon-color" item-start></ion-icon>
+            Freio
+            <ion-badge class="ion-att-color" item-end>{{horse.break}}%</ion-badge>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+</ion-content>

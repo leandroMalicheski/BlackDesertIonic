@@ -10,7 +10,7 @@ import { FoodPage } from '../food/food';
 export class IngredientPage {
   ingredient: any;
   filteredFoods: any;
-  ingredientForm: {qty:int};
+  ingredientForm: {qty:number};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     if(navParams.get('item').foods){
@@ -18,7 +18,7 @@ export class IngredientPage {
     }else{
        this.ingredient = this.getIngredient(navParams.get('item').id);
     }
-    this.ingredientForm = {};
+    this.ingredientForm = {"qty":0};
     this.filteredFoods = this.filterFoods(this.ingredient.foods)
   }
 

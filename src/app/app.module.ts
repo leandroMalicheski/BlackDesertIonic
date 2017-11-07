@@ -13,6 +13,7 @@ import { ImperialCookingCalcPage } from '../pages/imperialCookingCalc/imperialCo
 import { ImperialItemPage } from '../pages/imperialItem/imperialItem';
 import { TradeCalcPage } from '../pages/tradeCalc/tradeCalc';
 import { TradeItemPage } from '../pages/tradeItem/tradeItem';
+import { HorsePage } from '../pages/horse/horse';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,7 +30,8 @@ import { UtilsProvider } from '../providers/utils/utils';
     ImperialCookingCalcPage,
     ImperialItemPage,
     TradeCalcPage,
-    TradeItemPage
+    TradeItemPage,
+    HorsePage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { UtilsProvider } from '../providers/utils/utils';
     ImperialCookingCalcPage,
     ImperialItemPage,
     TradeCalcPage,
-    TradeItemPage
+    TradeItemPage,
+    HorsePage
   ],
   providers: [
     StatusBar,
