@@ -29,7 +29,7 @@ export class MyApp {
       { title: 'Comidas', component: FoodCalcPage},
       { title: 'Ingredientes', component: IngredientCalcPage},
       { title: 'Culinária Imperial', component: ImperialCookingCalcPage},
-      { title: 'Comercio de Itens', component: TradeCalcPage},
+      //{ title: 'Comercio de Itens', component: TradeCalcPage},
       { title: 'Cavalos', component: HorsePage}
     ];
 
