@@ -1,10 +1,13 @@
 .page-food {}
 
-.page-food .ion-item {background-color: #d8d6d2; margin-bottom: 1em; max-height: 3em;}
+.page-food .ion-item {background-color: #d8d6d2; margin-bottom: 1em; max-height: 3em; border-radius: .5em;}
 .page-food .ion-item .thumbnail-size {min-width: 40px !important; min-height: 40px !important;}
-.page-food .thumbnail-size .img-size {width: 40px !important; height: 40px !important;}
+.page-food .ion-item .thumbnail-size .img-size {width: 40px !important; height: 40px !important;}
 
-.page-food .ion-item-list {background-color: #d8d6d2; max-height: 3em;}
-.page-food .ion-item-list .thumbnail-size {min-width: 40px !important; min-height: 40px !important;}
+.page-food .ion-item-input{background-color: rgba(216,214,210,0.3); border-radius: .5em;}
+.page-food .button {border-radius: 1em; margin-top: 1em;}
 
-.page-food .ion-item-color{background-color: rgba(216,214,210,0.3);}
+.page-food .ion-card {border-radius: .5em; background-color: #d8d6d2;}
+.page-food .ion-card .ion-item-list {max-height: 3em; background-color: #d8d6d2;}
+.page-food .ion-card .ion-item-list .thumbnail-size {min-width: 40px !important; min-height: 40px !important;}
+.page-food .ion-card .ion-item-list .thumbnail-size .img-size {width: 40px !important; height: 40px !important;}

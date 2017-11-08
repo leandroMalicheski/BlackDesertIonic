@@ -17,20 +17,22 @@
 	</ion-item>
 	
 	<form name="formCalc" (ngSubmit)="calculate()">
-		<ion-item class="ion-item-color">
+		<ion-item class="ion-item-input">
 		    <ion-label floating>Quantidade de {{food.name}}</ion-label>
 			<ion-input type="number" [(ngModel)]="foodForm.qty" name="qty" required></ion-input>
 		</ion-item>
-		<button color="navBar" ion-button type="submit" block>Calculate</button>
+		<button color="navBar" class="button" ion-button type="submit" block>Calculate</button>
 	</form>
 	
 	<h3>Ingrediente(s)</h3>
-	<ion-item class="ion-item-list" *ngFor="let ingredient of filteredIngredients" (click)="ingredientTapped($event, ingredient)">
+	<ion-card class="ion-card">
+	 <ion-item class="ion-item-list" *ngFor="let ingredient of filteredIngredients" (click)="ingredientTapped($event, ingredient)">
 	  <ion-thumbnail class="thumbnail-size" item-start>
-	  	<img class="img-size" src="{{ingredient.icon}}">	
+	 	<img class="img-size" src="{{ingredient.icon}}">	
 	  </ion-thumbnail>
 	  <b>{{ingredient.name}}</b> : {{ingredient.qtyTotal}}
-	</ion-item>
+	 </ion-item>
+	</ion-card>
 	<h3 *ngIf="food.plusCrafted" >Resultados Adicionais</h3>
 	<ion-item class="ion-item" *ngFor="let food of food.plusCrafted">
 		{{food.name}}

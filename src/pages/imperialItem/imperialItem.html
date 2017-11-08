@@ -20,7 +20,7 @@
   <ion-item class="ion-item" [hidden]="hideResult"><b>Valor Aproximado à Receber:</b> R$ {{imperialItemForm.result}}</ion-item>
   
   <form name="formImperialItem" (ngSubmit)="calculate()">
-    <ion-item class="ion-item">
+    <ion-item class="ion-item-input">
         <ion-label floating>Quantidade de {{imperialItem.name}}</ion-label>
       <ion-input type="number" [(ngModel)]="imperialItemForm.qty" name="qty" required></ion-input>
     </ion-item>

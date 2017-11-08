@@ -1,5 +1,8 @@
 .page-imperialItem {}
 
-.page-imperialItem .ion-item{background-color: #d8d6d2; margin-bottom: 1em; max-height: 6em;}
+.page-imperialItem .ion-item{background-color: #d8d6d2; margin-bottom: 1em; max-height: 6em; border-radius: .5em;}
 .page-imperialItem .ion-item .thumbnail-size{min-width: 40px !important; min-height: 40px !important;}
-.page-imperialItem .thumbnail-size .img-size{width: 40px !important; height: 40px !important;}
+.page-imperialItem .ion-item .thumbnail-size .img-size{width: 40px !important; height: 40px !important;}
+
+.page-imperialItem .ion-item-input {background-color: rgba(216,214,210,0.3); border-radius: .5em;}
+.page-imperialItem .button {border-radius: 1em; margin-top: 1em;}
