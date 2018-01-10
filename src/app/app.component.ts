@@ -26,9 +26,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
+      { title: 'Culinária Imperial', component: ImperialCookingCalcPage},
       { title: 'Comidas', component: FoodCalcPage},
       { title: 'Ingredientes', component: IngredientCalcPage},
-      { title: 'Culinária Imperial', component: ImperialCookingCalcPage},
       //{ title: 'Comercio de Itens', component: TradeCalcPage},
       { title: 'Cavalos', component: HorsePage}
     ];
@@ -50,3 +50,4 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 }
+

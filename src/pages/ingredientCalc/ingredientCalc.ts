@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
-import { IngredientPage } from '../ingredient/ingredient';
+import { IngredientPage } from '../foodIngredient/foodIngredient';
 
 @Component({
   selector: 'ingredientCalc',

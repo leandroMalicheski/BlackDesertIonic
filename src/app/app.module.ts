@@ -7,7 +7,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FoodCalcPage } from '../pages/foodCalc/foodCalc';
 import { FoodPage } from '../pages/food/food';
-import { IngredientPage } from '../pages/ingredient/ingredient';
+import { IngredientPage } from '../pages/foodIngredient/foodIngredient';
 import { IngredientCalcPage } from '../pages/ingredientCalc/ingredientCalc';
 import { ImperialCookingCalcPage } from '../pages/imperialCookingCalc/imperialCookingCalc';
 import { ImperialItemPage } from '../pages/imperialItem/imperialItem';

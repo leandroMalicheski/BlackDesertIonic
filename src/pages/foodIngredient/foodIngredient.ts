@@ -5,8 +5,8 @@ import { FoodPage } from '../food/food';
 import { Ingredient } from '../../classes/ingredient';
 
 @Component({
-  selector: 'ingredient',
-  templateUrl: 'ingredient.html'
+  selector: 'foodIngredient',
+  templateUrl: 'foodIngredient.html'
 })
 
 export class IngredientPage {
@@ -37,6 +37,7 @@ export class IngredientPage {
       let foodTemp = foodItemList[i];
       let food = foods[foodTemp.id]
           food.qty = foodTemp.qty;
+          food.qtyTotal = 0;
       filteredFoods.push(food);
     }
     return filteredFoods;

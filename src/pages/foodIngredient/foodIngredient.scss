@@ -1,0 +1,13 @@
+.page-foodIngredient {}
+
+.page-foodIngredient .ion-item {background-color: #d8d6d2; margin-bottom: 1em; max-height: 3em; border-radius: .5em;}
+.page-foodIngredient .ion-item .thumbnail-size {min-width: 40px !important; min-height: 40px !important;}
+.page-foodIngredient .ion-item .thumbnail-size .img-size {width: 40px !important; height: 40px !important;}
+
+.page-foodIngredient .ion-item-input {background-color: rgba(216,214,210,0.3); border-radius: .5em;}
+.page-foodIngredient .button {border-radius: 1em; margin-top: 1em;}
+
+.page-foodIngredient .ion-card {border-radius: .5em; background-color: #d8d6d2;}
+.page-foodIngredient .ion-card .ion-item-list {max-height: 3em; background-color: #d8d6d2;}
+.page-foodIngredient .ion-card .ion-item-list .thumbnail-size {min-width: 40px !important; min-height: 40px !important;}
+.page-foodIngredient .ion-card .ion-item-list .thumbnail-size .img-size {width: 40px !important; height: 40px !important;}
