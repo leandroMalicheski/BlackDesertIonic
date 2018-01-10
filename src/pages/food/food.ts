@@ -2,23 +2,20 @@ import { Component } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
 import { IngredientPage } from '../ingredient/ingredient';
 
+import { Food } from '../../classes/food';
+
 @Component({
   selector: 'food',
   templateUrl: 'food.html'
 })
 
 export class FoodPage {
-  food: any;
+  food: Food;
   filteredIngredients: any;
   foodForm: {qty:number};
-  hideOtherCraftResult: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	if(navParams.get('item').ingredients){
-      this.food = navParams.get('item');
-    }else{  
-      this.food = this.getFood(navParams.get('item').id);
-    }
+    this.food = navParams.get('item');
     this.foodForm = {"qty":0};
   	this.filteredIngredients = this.filterIngredients(this.food.ingredients);
   }
@@ -39,14 +36,6 @@ export class FoodPage {
     }
   }
 
-  getFood(itemId) {
-    var foodList = JSON.parse(sessionStorage.getItem('foodList'));
-    for (var i = 0; i < foodList.length; i++) {
-      if (foodList[i].id === itemId) {
-        return foodList[i];
-      }
-    }
-  }
   filterIngredients(ingredientsItemList){
     let ingredients = JSON.parse(sessionStorage.getItem('ingredients'));
     let filteredIngredients = [];

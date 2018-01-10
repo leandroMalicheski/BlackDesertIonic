@@ -7,23 +7,42 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content padding class="page-home">
 	<ion-grid>
 	 <ion-row>
-	   <ion-col>
-	   	
+	   <ion-col class="ion-col-magin">
+		<ion-card (click)="itemTapped($event, 'ImperialCookingCalcPage')" class="ion-card">
+          <img src="assets/img/imperialItems/friedFishCookingBox.png" class="ion-card-img" />
+          <ion-card-content>
+            <ion-card-title>Culinária Imperial</ion-card-title>
+          </ion-card-content>
+        </ion-card>
 	   </ion-col>
-	   <ion-col>
-
+	   <ion-col class="ion-col-magin">
+	   	<ion-card (click)="itemTapped($event, 'HorsePage')" class="ion-card">
+          <img src="assets/img/horse/tier5L.png" class="ion-card-img" />
+          <ion-card-content>
+            <ion-card-title>Horses</ion-card-title>
+          </ion-card-content>
+        </ion-card>
 	   </ion-col>
 	 </ion-row>
 	 <ion-row>
-	   <ion-col>
-
+	   <ion-col class="ion-col-magin">
+		<ion-card (click)="itemTapped($event, 'FoodCalcPage')" class="ion-card">
+          <img src="assets/img/foodAndIgredients/beer.png" class="ion-card-img" />
+          <ion-card-content>
+            <ion-card-title>Comidas</ion-card-title>
+          </ion-card-content>
+        </ion-card>
 	   </ion-col>
-	   <ion-col>
-
+	   <ion-col class="ion-col-magin">
+	   	<ion-card (click)="itemTapped($event, 'IngredientCalcPage')" class="ion-card">
+          <img src="assets/img/foodAndIgredients/corn.png" class="ion-card-img" />
+          <ion-card-content>
+            <ion-card-title>Ingredientes</ion-card-title>
+          </ion-card-content>
+        </ion-card>
 	   </ion-col>
 	 </ion-row>
 	</ion-grid>
