@@ -32,7 +32,7 @@ export class ImperialItemPage {
   	for (let i = 0; i < foods.length; i++) {
       let food = foods[i];
       if(food.id === itemId){
-        craftMaterial = {id : food.id, name : food.name, icon : food.icon, hasFoodPage : food.hasFoodPage}
+        craftMaterial = food;
       }
     }
     return craftMaterial;
