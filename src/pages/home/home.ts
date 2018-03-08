@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { FoodCalcPage } from '../foodCalc/foodCalc';
-import { IngredientCalcPage } from '../ingredientCalc/ingredientCalc';
-import { ImperialCookingCalcPage } from '../imperialCookingCalc/imperialCookingCalc';
+import { FoodListPage } from '../foodList/foodList';
+import { FoodIngredientListPage } from '../foodIngredientList/foodIngredientList';
+import { ImperialCookingListPage } from '../imperialCookingList/imperialCookingList';
 import { HorsePage } from '../horse/horse';
-import { Ingredient } from '../../classes/ingredient';
+import { FoodIngredient } from '../../classes/foodIngredient';
 import { Food } from '../../classes/food';
+import { ImperialItem } from '../../classes/imperialItem';
 
 @Component({
   selector: 'page-home',
@@ -21,14 +22,14 @@ export class HomePage {
   }
 
   itemTapped(event, page){
-    if(page === "ImperialCookingCalcPage"){
-      page = ImperialCookingCalcPage;
+    if(page === "ImperialCookingListPage"){
+      page = ImperialCookingListPage;
     } else if (page === "HorsePage"){
       page = HorsePage;
-    } else if (page === "FoodCalcPage"){
-      page = FoodCalcPage;
-    } else if (page === "IngredientCalcPage"){
-      page = IngredientCalcPage;
+    } else if (page === "FoodListPage"){
+      page = FoodListPage;
+    } else if (page === "FoodIngredientListPage"){
+      page = FoodIngredientListPage;
     }
     this.navCtrl.push(page);    
   }
@@ -105,31 +106,31 @@ export class HomePage {
     let fruitGeneratedFood = [{"id":"11","qty":5},{"id":"9","qty":4}];
     let redSauceGeneratedFood = [{"id":"10","qty":2}]
 
-    let cereal = new Ingredient ("0","Cereais","assets/img/foodAndIgredients/corn.png", true, cerealGeneratedFood);
-    let mineralWater = new Ingredient("1","Água Mineral","assets/img/foodAndIgredients/mineralWater.png", false, undefined);
-    let sugar = new Ingredient("2","Açúcar","assets/img/foodAndIgredients/sugar.png",false, undefined);
-    let oatmeal = new Ingredient("3","Aveia","assets/img/foodAndIgredients/oatmealA.png",true, oatmealGeneratedFood);
-    let meat = new Ingredient("4","Carne","assets/img/foodAndIgredients/meat.png",true, meatGeneratedFood);
-    let driedFish = new Ingredient("5","Peixe Desidratado","assets/img/foodAndIgredients/driedFish.png",true,driedFishGeneratedFood);
-    let leavingAgent = new Ingredient("6","Fermento","assets/img/foodAndIgredients/leavingAgent.png",false, undefined);
-    let birdMeat = new Ingredient("7","Carne de Pássaro","assets/img/foodAndIgredients/birdMeat.png",true, birdMeatGeneratedFood);
-    let flour = new Ingredient("8","Farinha","assets/img/foodAndIgredients/flour.png",false, undefined);
-    let milk = new Ingredient("9","Leite","assets/img/foodAndIgredients/milk.png",true, milkGeneratedFood);
-    let onion = new Ingredient("10","Cebola","assets/img/foodAndIgredients/onion.png",false, undefined);
-    let honey = new Ingredient("11","Mel","assets/img/foodAndIgredients/honey.png",true, honeyGeneratedFood);
-    let wine = new Ingredient("12","Vinho","assets/img/foodAndIgredients/wine.png",false, undefined);
-    let salt = new Ingredient("13","Sal","assets/img/foodAndIgredients/salt.png",false, undefined);
-    let egg = new Ingredient("14","Ovos de Pássaro","assets/img/foodAndIgredients/egg.png",true, eggGeneratedFood);
-    let fryingOil = new Ingredient("15","Oleo para Fritura","assets/img/foodAndIgredients/fryingOil.png",false, undefined);  
-    let whiteSauce = new Ingredient("16","Molho Branco","assets/img/foodAndIgredients/whiteSauce.png",true, whiteSauceGeneratedFood);       
-    let oliveOil = new Ingredient("17","Oleo de Oliva","assets/img/foodAndIgredients/oliveOil.png",false, undefined);       
-    let rough = new Ingredient("18","Massa","assets/img/foodAndIgredients/rough.png",false, roughGeneratedFood);
-    let plants = new Ingredient("19","Plantas","assets/img/foodAndIgredients/rose.png",false, undefined);
-    let fruit = new Ingredient("20","Frutas","assets/img/foodAndIgredients/apple.png", true, fruitGeneratedFood);
-    let garlic = new Ingredient("21","Alho","assets/img/foodAndIgredients/garlic.png",false, undefined);
-    let redSauce = new Ingredient("22","Molho Vermelho","assets/img/foodAndIgredients/redSauce.png",true, redSauceGeneratedFood);
-    let cream = new Ingredient("23","Creme","assets/img/foodAndIgredients/cream.png",false, undefined);
-    let baseSauce = new Ingredient("24", "Molho Veid", "assets/img/foodAndIgredients/baseSauce.png", false, undefined);
+    let cereal = new FoodIngredient ("0","Cereais","assets/img/foodAndIgredients/corn.png", true, cerealGeneratedFood);
+    let mineralWater = new FoodIngredient("1","Água Mineral","assets/img/foodAndIgredients/mineralWater.png", false, undefined);
+    let sugar = new FoodIngredient("2","Açúcar","assets/img/foodAndIgredients/sugar.png",false, undefined);
+    let oatmeal = new FoodIngredient("3","Aveia","assets/img/foodAndIgredients/oatmealA.png",true, oatmealGeneratedFood);
+    let meat = new FoodIngredient("4","Carne","assets/img/foodAndIgredients/meat.png",true, meatGeneratedFood);
+    let driedFish = new FoodIngredient("5","Peixe Desidratado","assets/img/foodAndIgredients/driedFish.png",true,driedFishGeneratedFood);
+    let leavingAgent = new FoodIngredient("6","Fermento","assets/img/foodAndIgredients/leavingAgent.png",false, undefined);
+    let birdMeat = new FoodIngredient("7","Carne de Pássaro","assets/img/foodAndIgredients/birdMeat.png",true, birdMeatGeneratedFood);
+    let flour = new FoodIngredient("8","Farinha","assets/img/foodAndIgredients/flour.png",false, undefined);
+    let milk = new FoodIngredient("9","Leite","assets/img/foodAndIgredients/milk.png",true, milkGeneratedFood);
+    let onion = new FoodIngredient("10","Cebola","assets/img/foodAndIgredients/onion.png",false, undefined);
+    let honey = new FoodIngredient("11","Mel","assets/img/foodAndIgredients/honey.png",true, honeyGeneratedFood);
+    let wine = new FoodIngredient("12","Vinho","assets/img/foodAndIgredients/wine.png",false, undefined);
+    let salt = new FoodIngredient("13","Sal","assets/img/foodAndIgredients/salt.png",false, undefined);
+    let egg = new FoodIngredient("14","Ovos de Pássaro","assets/img/foodAndIgredients/egg.png",true, eggGeneratedFood);
+    let fryingOil = new FoodIngredient("15","Oleo para Fritura","assets/img/foodAndIgredients/fryingOil.png",false, undefined);  
+    let whiteSauce = new FoodIngredient("16","Molho Branco","assets/img/foodAndIgredients/whiteSauce.png",true, whiteSauceGeneratedFood);       
+    let oliveOil = new FoodIngredient("17","Oleo de Oliva","assets/img/foodAndIgredients/oliveOil.png",false, undefined);       
+    let rough = new FoodIngredient("18","Massa","assets/img/foodAndIgredients/rough.png",false, roughGeneratedFood);
+    let plants = new FoodIngredient("19","Plantas","assets/img/foodAndIgredients/rose.png",false, undefined);
+    let fruit = new FoodIngredient("20","Frutas","assets/img/foodAndIgredients/apple.png", true, fruitGeneratedFood);
+    let garlic = new FoodIngredient("21","Alho","assets/img/foodAndIgredients/garlic.png",false, undefined);
+    let redSauce = new FoodIngredient("22","Molho Vermelho","assets/img/foodAndIgredients/redSauce.png",true, redSauceGeneratedFood);
+    let cream = new FoodIngredient("23","Creme","assets/img/foodAndIgredients/cream.png",false, undefined);
+    let baseSauce = new FoodIngredient("24", "Molho Veid", "assets/img/foodAndIgredients/baseSauce.png", false, undefined);
 
     let ingredientsList = [cereal,meat,driedFish,birdMeat,milk,honey,egg,rough,fruit,oatmeal,whiteSauce, redSauce];
     sessionStorage.setItem('ingredientsList', JSON.stringify(ingredientsList));    
@@ -140,17 +141,18 @@ export class HomePage {
   }
 
   createImperialCooking(){
+    let local = "Heidel, Altinova e Calpheon";
     let imperialCookingList = [
-      {"id":"0","name":"Baú de Peixe Frito", "icon":"assets/img/imperialItems/friedFishCookingBox.png","level":"Aprendiz","local":"Heidel, Altinova e Calpheon","cratfItemId":"4","qtyToCraft":20, "hasFoodPage":true, "price":150000},
-      {"id":"1","name":"Baú de Ovo Cozido de Pássaro", "icon":"assets/img/imperialItems/boiledEggCookingBox.png","level":"Aprendiz","local":"Heidel, Altinova e Calpheon","cratfItemId":"2","qtyToCraft":20, "hasFoodPage":true, "price":138000},      
-      {"id":"2","name":"Baú de Sopa de Carne", "icon":"assets/img/imperialItems/meatStewCookingBox.png","level":"Aprendiz","local":"Heidel, Altinova e Calpheon","cratfItemId":"6","qtyToCraft":20, "hasFoodPage":true, "price":195000},
-      {"id":"3","name":"Baú de File de Peixe", "icon":"assets/img/imperialItems/fishFilletCookingBox.png","level":"Proficiente","local":"Heidel, Altinova e Calpheon","cratfItemId":"5","qtyToCraft":20, "hasFoodPage":true, "price":160000},
-      {"id":"5","name":"Baú de Pão Macio", "icon":"assets/img/imperialItems/softBreadCookingBox.png","level":"Proficiente","local":"Heidel, Altinova e Calpheon","cratfItemId":"12","qtyToCraft":20, "hasFoodPage":true, "price":192000},
-      {"id":"4","name":"Baú de Pudim de Fruta", "icon":"assets/img/imperialItems/fruitPuddingCookingBox.png","level":"Proficiente","local":"Heidel, Altinova e Calpheon","cratfItemId":"11","qtyToCraft":20, "hasFoodPage":true, "price":212000},
-      {"id":"6","name":"Baú de Cheiroso de Chá com Aroma Fino", "icon":"assets/img/imperialItems/goodSmellingCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"9","qtyToCraft":30, "hasFoodPage":true, "price":217000},
-      {"id":"7","name":"Baú de Omelete", "icon":"assets/img/imperialItems/omeleteCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"7","qtyToCraft":40, "hasFoodPage":true, "price":205000},
-      {"id":"8","name":"Baú de Carne", "icon":"assets/img/imperialItems/steakCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"10","qtyToCraft":20, "hasFoodPage":true, "price":242000},      
-      {"id":"9","name":"Baú de Torta de Carne", "icon":"assets/img/imperialItems/meatPieCookingBox.png","level":"Profissional","local":"Heidel, Altinova e Calpheon","cratfItemId":"13","qtyToCraft":30, "hasFoodPage":true, "price":210000},      
+      new ImperialItem("0","Baú de Peixe Frito","assets/img/imperialItems/friedFishCookingBox.png","Aprendiz", local ,"4",20, true, 150000),
+      new ImperialItem("1","Baú de Ovo Cozido de Pássaro","assets/img/imperialItems/boiledEggCookingBox.png","Aprendiz",local,"2",20, true, 138000),      
+      new ImperialItem("2","Baú de Sopa de Carne","assets/img/imperialItems/meatStewCookingBox.png","Aprendiz",local,"6",20, true, 195000),
+      new ImperialItem("3","Baú de File de Peixe","assets/img/imperialItems/fishFilletCookingBox.png","Proficiente",local,"5",20, true, 160000),
+      new ImperialItem("5","Baú de Pão Macio","assets/img/imperialItems/softBreadCookingBox.png","Proficiente",local,"12",20, true, 192000),
+      new ImperialItem("4","Baú de Pudim de Fruta","assets/img/imperialItems/fruitPuddingCookingBox.png","Proficiente",local,"11",20, true, 212000),
+      new ImperialItem("6","Baú de Cheiroso de Chá com Aroma Fino","assets/img/imperialItems/goodSmellingCookingBox.png","Profissional",local,"9",30, true, 217000),
+      new ImperialItem("7","Baú de Omelete","assets/img/imperialItems/omeleteCookingBox.png","Profissional",local,"7",40, true, 205000),
+      new ImperialItem("8","Baú de Carne","assets/img/imperialItems/steakCookingBox.png","Profissional",local,"10",20, true, 242000),      
+      new ImperialItem("9","Baú de Torta de Carne","assets/img/imperialItems/meatPieCookingBox.png","Profissional",local,"13",30, true, 210000), 
     ];
     sessionStorage.setItem('imperialCookingList', JSON.stringify(imperialCookingList));   
   }

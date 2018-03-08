@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
 import { FoodPage } from '../food/food';
+import { Food } from '../../classes/food';
 
 @Component({
-  selector: 'foodCalc',
-  templateUrl: 'foodCalc.html'
+  selector: 'foodList',
+  templateUrl: 'foodList.html'
 })
 
-export class FoodCalcPage {
-  foodList: Array<any>;
-  foods: Array<{id:string, name:string, icon:string, hasFoodPage:boolean}>;
+export class FoodListPage {
+  foodList: Array<Food>;
+  foods: Array<Food>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.foodList = JSON.parse(sessionStorage.getItem('foodList'));

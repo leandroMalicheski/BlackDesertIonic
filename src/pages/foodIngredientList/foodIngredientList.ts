@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
 import { IngredientPage } from '../foodIngredient/foodIngredient';
+import { FoodIngredient } from '../../classes/foodIngredient';
 
 @Component({
-  selector: 'ingredientCalc',
-  templateUrl: 'ingredientCalc.html'
+  selector: 'foodIngredientList',
+  templateUrl: 'foodIngredientList.html'
 })
 
-export class IngredientCalcPage {
-  ingredientsList: Array<any>;
-
-  ingredients: Array<{id:string, name:string, icon:string, hasIngredientPage:boolean, hasFoodPage:boolean}>;
+export class FoodIngredientListPage {
+  ingredientsList: Array<FoodIngredient>;
+  ingredients: Array<FoodIngredient>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.ingredientsList = JSON.parse(sessionStorage.getItem('ingredientsList'));

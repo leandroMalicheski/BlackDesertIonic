@@ -4,6 +4,7 @@ interface IngredientNeeded{id: string;	qty: number;};
 interface IngredientsNeededList extends Array<IngredientNeeded>{};
 
 export class Food {
-	
+	qtyTotal: number;
+	qty: number;
 	constructor(public id: string, public name: string, public level: string, public icon: string, public plusCrafted: PlusCraftedList, public ingredients: IngredientsNeededList, public hasFoodPage: boolean){}
 }

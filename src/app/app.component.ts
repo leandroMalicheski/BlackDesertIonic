@@ -4,9 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { FoodCalcPage } from '../pages/foodCalc/foodCalc';
-import { IngredientCalcPage } from '../pages/ingredientCalc/ingredientCalc';
-import { ImperialCookingCalcPage } from '../pages/imperialCookingCalc/imperialCookingCalc';
+import { FoodListPage } from '../pages/foodList/foodList';
+import { FoodIngredientListPage } from '../pages/foodIngredientList/foodIngredientList';
+import { ImperialCookingListPage } from '../pages/imperialCookingList/imperialCookingList';
 import { TradeCalcPage } from '../pages/tradeCalc/tradeCalc';
 import { HorsePage } from '../pages/horse/horse';
 
@@ -26,9 +26,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Culinária Imperial', component: ImperialCookingCalcPage},
-      { title: 'Comidas', component: FoodCalcPage},
-      { title: 'Ingredientes', component: IngredientCalcPage},
+      { title: 'Culinária Imperial', component: ImperialCookingListPage},
+      { title: 'Comidas', component: FoodListPage},
+      { title: 'Ingredientes', component: FoodIngredientListPage},
       //{ title: 'Comercio de Itens', component: TradeCalcPage},
       { title: 'Cavalos', component: HorsePage}
     ];

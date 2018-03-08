@@ -5,11 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { FoodCalcPage } from '../pages/foodCalc/foodCalc';
+import { FoodListPage } from '../pages/foodList/foodList';
 import { FoodPage } from '../pages/food/food';
 import { IngredientPage } from '../pages/foodIngredient/foodIngredient';
-import { IngredientCalcPage } from '../pages/ingredientCalc/ingredientCalc';
-import { ImperialCookingCalcPage } from '../pages/imperialCookingCalc/imperialCookingCalc';
+import { FoodIngredientListPage } from '../pages/foodIngredientList/foodIngredientList';
+import { ImperialCookingListPage } from '../pages/imperialCookingList/imperialCookingList';
 import { ImperialItemPage } from '../pages/imperialItem/imperialItem';
 import { TradeCalcPage } from '../pages/tradeCalc/tradeCalc';
 import { TradeItemPage } from '../pages/tradeItem/tradeItem';
@@ -23,11 +23,11 @@ import { UtilsProvider } from '../providers/utils/utils';
   declarations: [
     MyApp,
     HomePage,
-    FoodCalcPage,
-    IngredientCalcPage,
+    FoodListPage,
+    FoodIngredientListPage,
     FoodPage,
     IngredientPage,
-    ImperialCookingCalcPage,
+    ImperialCookingListPage,
     ImperialItemPage,
     TradeCalcPage,
     TradeItemPage,
@@ -42,11 +42,11 @@ import { UtilsProvider } from '../providers/utils/utils';
   entryComponents: [
     MyApp,
     HomePage,
-    FoodCalcPage,
-    IngredientCalcPage,
+    FoodListPage,
+    FoodIngredientListPage,
     FoodPage,
     IngredientPage,
-    ImperialCookingCalcPage,
+    ImperialCookingListPage,
     ImperialItemPage,
     TradeCalcPage,
     TradeItemPage,

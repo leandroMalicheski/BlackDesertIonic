@@ -3,6 +3,7 @@ import { NavController, NavParams} from 'ionic-angular';
 import { IngredientPage } from '../foodIngredient/foodIngredient';
 
 import { Food } from '../../classes/food';
+import { FoodIngredient } from '../../classes/foodIngredient';
 
 @Component({
   selector: 'food',
@@ -11,7 +12,7 @@ import { Food } from '../../classes/food';
 
 export class FoodPage {
   food: Food;
-  filteredIngredients: any;
+  filteredIngredients: Array<FoodIngredient>;
   foodForm: {qty:number};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -32,7 +33,7 @@ export class FoodPage {
     if(item.hasIngredientPage){
       this.navCtrl.push(IngredientPage, {item: item});
     }else if(item.hasFoodPage){
-       this.navCtrl.push(FoodPage, {item: item});
+      this.navCtrl.push(FoodPage, {item: item});
     }
   }
 
