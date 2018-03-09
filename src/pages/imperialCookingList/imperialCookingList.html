@@ -11,8 +11,21 @@
 <ion-content class="page-ImperialCookingList" padding>
   <ion-list class="list-structure">
     <ion-item class="ion-item">
-      <ion-icon name="cube" class="icon-margin"></ion-icon>Itens<br>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>Aprendiz<br>
     </ion-item>
-    <ion-item class="list-background" *ngFor="let item of imperialItemList" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
+    <ion-item class="list-background" *ngFor="let item of imperialItemListAprendiz" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
+    <ion-item class="ion-item">
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      Proficiente<br>
+    </ion-item>
+    <ion-item class="list-background" *ngFor="let item of imperialItemListProficiente" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
+    <ion-item class="ion-item">
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      Profissional<br>
+    </ion-item>
+     <ion-item class="list-background" *ngFor="let item of imperialItemListProfissional" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
   </ion-list>
 </ion-content>
