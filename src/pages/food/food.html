@@ -23,7 +23,6 @@
 		</ion-item>
 		<button color="navBar" class="button" ion-button type="submit" block>Calculate</button>
 	</form>
-	
 	<h3>Ingrediente(s)</h3>
 	<ion-card class="ion-card">
 	 <ion-item class="ion-item-list" *ngFor="let ingredient of filteredIngredients" (click)="ingredientTapped($event, ingredient)">
@@ -33,8 +32,59 @@
 	  <b>{{ingredient.name}}</b> : {{ingredient.qtyTotal}}
 	 </ion-item>
 	</ion-card>
-	<h3 *ngIf="food.plusCrafted" >Resultados Adicionais</h3>
+	<h3>Configuração do Tempo</h3>
+	<ion-card class="ion-card">
+		<ion-item class="ion-item-list">
+		  <ion-thumbnail class="thumbnail-size" item-start>
+		 	<img class="img-size" src="{{cookingClothes.clothesIcon}}">	
+		  </ion-thumbnail>
+		  <b>Traje Bordado de Prata de Cozinheiro</b><br>
+		  <b>Level:</b> +{{cookingClothes.clothesLevel}}
+		</ion-item>
+		<ion-item class="ion-item-list">
+	      <ion-label><b>Utiliza o Traje ?</b></ion-label>
+	      <ion-toggle color="navBar" (ionChange)="cookingClothes.isClothesOn = !cookingClothes.isClothesOn"></ion-toggle>
+		</ion-item>
+		<ion-item class="ion-item-list" >
+	      <ion-range min="0" max="5" step="1" snaps="true" color="navBar" [(ngModel)]="cookingClothes.clothesLevel" [disabled]="!cookingClothes.isClothesOn">
+	        <ion-icon range-left small color="navBar" name="flame"></ion-icon>
+	        <ion-icon range-right color="navBar" name="flame"></ion-icon>
+	      </ion-range>
+	    </ion-item>
+	    <ion-item class="ion-item-list">
+		  <ion-thumbnail class="thumbnail-size" item-start>
+		 	<img class="img-size" src="{{cookingUtensil.utensilIcon}}">	
+		  </ion-thumbnail>
+		  <b>Utensílio Utilizado</b><br>
+		  <b>Tempo:</b> {{cookingUtensil.timeGrantByUtensil}}s para o preparo;
+		</ion-item>
+	    <ion-list class="radio-group" radio-group [(ngModel)]="cookingUtensil.timeGrantByUtensil">			
+			<ion-item class="radio-group-list">
+			  <ion-label>Utensílio Intermediária</ion-label>
+			  <ion-radio color="navBar" value="+0"></ion-radio>
+			</ion-item>
+			<ion-item class="radio-group-list">
+			  <ion-label>Utensílio Avançado</ion-label>
+			  <ion-radio color="navBar" value="-1"></ion-radio>
+			</ion-item>
+			<ion-item class="radio-group-list">
+			  <ion-label>Utensílio Tradicional de Balenos</ion-label>
+			  <ion-radio color="navBar" value="+5"></ion-radio>
+			</ion-item>
+			<ion-item class="radio-group-list">
+			  <ion-label>Utensílio Tradicional de Serendia</ion-label>
+			  <ion-radio color="navBar" value="+6"></ion-radio>
+			</ion-item>
+			<ion-item class="radio-group-list">
+			  <ion-label>Utensílio Tradicional de Calpheon</ion-label>
+			  <ion-radio color="navBar" value="+7"></ion-radio>
+			</ion-item>
+		</ion-list>
+	</ion-card>
+    <h3 *ngIf="totalTimeSpent">Tempo Gasto</h3>  
+    <ion-item *ngIf="totalTimeSpent" class="ion-item">{{totalTimeSpent}}</ion-item>    
+    <h3 *ngIf="food.plusCrafted" >Resultados Adicionais</h3>
 	<ion-item class="ion-item" *ngFor="let food of food.plusCrafted">
 		{{food.name}}
-	</ion-item>
+	</ion-item> 
 </ion-content>

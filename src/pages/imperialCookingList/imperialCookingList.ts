@@ -24,9 +24,7 @@ export class ImperialCookingListPage {
   	let listResult = [];
   	for (var i = list.length - 1; i >= 0; i--) {
   		var item = list[i];
-  		if(item.level === level){
-  			listResult.push(item);
-  		}
+  		if(item.level === level){listResult.push(item);}
   	}
   	return listResult;
   }

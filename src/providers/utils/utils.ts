@@ -29,5 +29,57 @@ export class UtilsProvider {
     	}
     }
     return value;
+  }
+
+  convertSecToMin(timeInSeconds){
+    return timeInSeconds / 60;
   }  
+  convertMinToSec(timeInMinutes){
+    return timeInMinutes * 60;
+  }
+  convertMinToHour(timeInMinutes){
+    return timeInMinutes / 60;
+  }
+  convertHourToMin(timeInHours){
+    return timeInHours * 60;
+  }
+  convertSecToHour(timeInSeconds){
+    let timeInMinutes = this.convertSecToMin(timeInSeconds);
+    return this.convertMinToHour(timeInMinutes);
+  }
+
+  isInt(number){
+    return number % 1 === 0;
+  }
+  isFloat(number){
+    return number % 1 !== 0;
+  }
+
+  transformHoursInHHMMSS(totalTimeSpent){
+    let timeInHours = this.convertSecToHour(totalTimeSpent);
+      if(this.isFloat(timeInHours)){
+        let rest = timeInHours % 1;
+        let minutes = this.convertHourToMin(rest);
+        if(this.isFloat(minutes)){
+          return Math.floor(timeInHours) + " Hora(s), " + this.transformMinutesInMMSS(minutes);
+        }else{
+          return Math.floor(timeInHours) + " Hora(s) e " + this.transformMinutesInMMSS(minutes);
+        }
+      }else{
+        return timeInHours + " Horas.";  
+      }
+  }
+  transformMinutesInMMSS(totalTimeSpent){
+    if(this.isFloat(totalTimeSpent)){
+      let rest = totalTimeSpent % 1;
+      let seconds = this.convertMinToSec(rest);
+      if(Math.floor(seconds) === 0){
+        return Math.floor(totalTimeSpent) + " Minutos.";
+      }else{
+        return Math.floor(totalTimeSpent) + " Minutos e " + Math.floor(seconds) + " Segundos." ;  
+      }      
+    }else{
+      return totalTimeSpent + " Minutos.";
+    }
+  }
 }
