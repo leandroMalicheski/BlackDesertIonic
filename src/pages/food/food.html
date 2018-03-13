@@ -34,7 +34,7 @@
 	</ion-card>
 	<h3>Configuração do Tempo</h3>
 	<ion-card class="ion-card">
-		<ion-item class="ion-item-list">
+		<ion-item class="ion-item-list" style="margin-top: 1em;">
 		  <ion-thumbnail class="thumbnail-size" item-start>
 		 	<img class="img-size" src="{{cookingClothes.clothesIcon}}">	
 		  </ion-thumbnail>
@@ -42,22 +42,24 @@
 		  <b>Level:</b> +{{cookingClothes.clothesLevel}}
 		</ion-item>
 		<ion-item class="ion-item-list">
-	      <ion-label><b>Utiliza o Traje ?</b></ion-label>
+	      <ion-label>Utiliza o Traje ?</ion-label>
 	      <ion-toggle color="navBar" (ionChange)="cookingClothes.isClothesOn = !cookingClothes.isClothesOn"></ion-toggle>
 		</ion-item>
-		<ion-item class="ion-item-list" >
+		<ion-item class="ion-item-list">
 	      <ion-range min="0" max="5" step="1" snaps="true" color="navBar" [(ngModel)]="cookingClothes.clothesLevel" [disabled]="!cookingClothes.isClothesOn">
 	        <ion-icon range-left small color="navBar" name="flame"></ion-icon>
 	        <ion-icon range-right color="navBar" name="flame"></ion-icon>
 	      </ion-range>
 	    </ion-item>
-	    <ion-item class="ion-item-list">
+	</ion-card>
+	<ion-card class="ion-card">
+	    <ion-item class="ion-item-list" style="margin-top: 1em;">
 		  <ion-thumbnail class="thumbnail-size" item-start>
 		 	<img class="img-size" src="{{cookingUtensil.utensilIcon}}">	
 		  </ion-thumbnail>
 		  <b>Utensílio Utilizado</b><br>
 		  <b>Tempo:</b> {{cookingUtensil.timeGrantByUtensil}}s para o preparo;
-		</ion-item>
+		</ion-item><br>
 	    <ion-list class="radio-group" radio-group [(ngModel)]="cookingUtensil.timeGrantByUtensil">			
 			<ion-item class="radio-group-list">
 			  <ion-label>Utensílio Intermediária</ion-label>

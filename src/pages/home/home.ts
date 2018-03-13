@@ -69,7 +69,7 @@ export class HomePage {
     let whiteSauce = new Food("14", "Molho Branco","Iniciante 1", "assets/img/foodAndIgredients/whiteSauce.png", undefined, whiteSauceIngredients, true);
     let redSauce = new Food("15", "Molho Vermelho","Iniciante 1", "assets/img/foodAndIgredients/redSauce.png", undefined, redSauceIngredients, true);
 
-    let foodList = [beer, whiteSauce, redSauce, friedFish, boiledEgg, meatStew, fruitPudding, softBread, oatmeal, omelete, teaWithFineScent, steak, meatPie, fishFilletChips, organicFeed, honeycombCookie];
+    let foodList = [oatmeal, steak, honeycombCookie, beer, teaWithFineScent, meatStew, whiteSauce, redSauce, omelete, boiledEgg, softBread, friedFish, fruitPudding, organicFeed, fishFilletChips, meatPie];
     sessionStorage.setItem('foodList', JSON.stringify(foodList));
 
     let foods = [beer, organicFeed, boiledEgg, oatmeal, friedFish, fishFilletChips, meatStew, omelete, honeycombCookie, teaWithFineScent, steak, fruitPudding, 
@@ -104,7 +104,7 @@ export class HomePage {
     let cream = new FoodIngredient("23","Creme","assets/img/foodAndIgredients/cream.png",false, undefined);
     let baseSauce = new FoodIngredient("24", "Molho Veid", "assets/img/foodAndIgredients/baseSauce.png", false, undefined);
 
-    let ingredientsList = [cereal,meat,driedFish,birdMeat,milk,honey,egg,rough,fruit,oatmeal,whiteSauce, redSauce];
+    let ingredientsList = [oatmeal,meat,birdMeat,cereal,fruit,milk,rough,honey,whiteSauce,redSauce,egg,driedFish];
     sessionStorage.setItem('ingredientsList', JSON.stringify(ingredientsList));    
     
     let ingredients = [cereal,mineralWater,sugar,oatmeal,meat,driedFish,leavingAgent,birdMeat,flour,milk,onion,honey,wine,salt,egg,
