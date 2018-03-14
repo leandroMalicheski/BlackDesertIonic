@@ -26,6 +26,23 @@
       <ion-icon name="beer" class="icon-margin"></ion-icon>
       Profissional<br>
     </ion-item>
-     <ion-item class="list-background" *ngFor="let item of imperialItemListProfissional" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
+    <ion-item class="list-background" *ngFor="let item of imperialItemListProfissional" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
+    <ion-item class="ion-item">
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      Artesão<br>
+    </ion-item>
+    <ion-item class="list-background" *ngFor="let item of imperialItemListArtesao" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
+    <ion-item class="ion-item">
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      <ion-icon name="beer" class="icon-margin"></ion-icon>
+      Mestre<br>
+    </ion-item>
+    <ion-item class="list-background" *ngFor="let item of imperialItemListMestre" (click)="itemTapped($event, item)">{{item.name}}</ion-item>
   </ion-list>
 </ion-content>

@@ -12,12 +12,16 @@ export class ImperialCookingListPage {
   imperialItemListAprendiz: Array<ImperialItem>;
   imperialItemListProficiente: Array<ImperialItem>;
   imperialItemListProfissional: Array<ImperialItem>;
+  imperialItemListMestre: Array<ImperialItem>;
+  imperialItemListArtesao: Array<ImperialItem>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	let list = JSON.parse(sessionStorage.getItem('imperialCookingList'))
   	this.imperialItemListAprendiz = this.separateByLevel(list,"Aprendiz");
   	this.imperialItemListProficiente = this.separateByLevel(list,"Proficiente");
   	this.imperialItemListProfissional = this.separateByLevel(list,"Profissional");
+    this.imperialItemListMestre = this.separateByLevel(list,"Mestre");
+    this.imperialItemListArtesao = this.separateByLevel(list,"Artesão");
   }
 
   separateByLevel(list,level){
