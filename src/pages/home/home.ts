@@ -72,65 +72,85 @@ export class HomePage {
       [new RecipeItem("4",8),new RecipeItem("8",5),new RecipeItem("14",2),new RecipeItem("25",2),new RecipeItem("15",4)], true);
     let gratinCheese = new Food("17", "Queijo Gratin","Profissional 3","assets/img/foodAndIgredients/gratinCheese.png",[{"name":"Queijo Gratin Gostoso"}],
       [new RecipeItem("27",1),new RecipeItem("18",5),new RecipeItem("28",4),new RecipeItem("25",3),new RecipeItem("15",3)], true);
-    let grilledSausage = new Food("27", "Salsicha Grelhada","Proficiente 5","assets/img/foodAndIgredients/grilledSausage.png",[{"name":"Linguiça Defumada"}], 
-      [new RecipeItem("4",6), new RecipeItem("10",1), new RecipeItem("26",2), new RecipeItem("13",2)], true);
     let desertDumpling = new Food("18","Bolinho do Deserto","Proficiente 9","assets/img/foodAndIgredients/desertDumpling.png",[{"name":"Bolinho do Deserto Gostoso"}],
       [new RecipeItem("29",6), new RecipeItem("18",6), new RecipeItem("30",1), new RecipeItem("17",2)], true);
     let honeyWine = new Food("19","Vinho de Mel","Proficiente 9","assets/img/foodAndIgredients/honeyWine.png",[{"name":"Vinho de Mel Picante"}],
-      [new RecipeItem("11",3), new RecipeItem("31",2), new RecipeItem("2",2), new RecipeItem("1",6), true]);
+      [new RecipeItem("11",3), new RecipeItem("31",2), new RecipeItem("2",2), new RecipeItem("1",6)], true);
     let liquorEssence = new Food("20", "Essência de Liquor","Proficiente 1","assets/img/foodAndIgredients/liquorEssence.png", undefined,
       [new RecipeItem("8",1), new RecipeItem("20",1), new RecipeItem("6",1)], true);
+    let grilledSausage = new Food("21", "Salsicha Grelhada","Proficiente 5","assets/img/foodAndIgredients/grilledSausage.png",[{"name":"Linguiça Defumada"}], 
+      [new RecipeItem("4",6), new RecipeItem("10",1), new RecipeItem("26",2), new RecipeItem("13",2)], true);
+    let seafoodPasta = new Food("22","Macarrão de Frutos do Mar","Proficiente 9","assets/img/foodAndIgredients/seafoodPasta.png",[{"name":"Pasta de Marisco"}],
+      [new RecipeItem("32",4), new RecipeItem("18",5), new RecipeItem("12",3), new RecipeItem("21",3)], true);
+    let suteTea = new Food("23","Chá Mate","Profissional 7","assets/img/foodAndIgredients/suteTea.png",[{"name":"Chá Mate Saúdavel"}],
+      [new RecipeItem("34",2), new RecipeItem("33",2), new RecipeItem("9",3),new RecipeItem("13",1)],true);
+    let vinegar = new Food("24","Vinagre","Profissional 1","assets/img/foodAndIgredients/vinegar.png", undefined,
+      [new RecipeItem("0",1),new RecipeItem("20",1),new RecipeItem("6",1),new RecipeItem("2",1)], true);
+    let pickledVegetables = new Food("25","Legumes em Conserva","Proficiente 9","assets/img/foodAndIgredients/pickledVegetables.png", [{"name":"Legumes em Conserva Doce e Azedo"}],
+      [new RecipeItem("28",8), new RecipeItem("35",4), new RecipeItem("6",2), new RecipeItem("2",2)], true);
+    let darkPudding = new Food("26","Pudim Escuro","Profissional 7","assets/img/foodAndIgredients/darkPudding.png",[{"name":"Pudim Escuro Sangrento"}],
+      [new RecipeItem("3",1),new RecipeItem("36",1),new RecipeItem("7",5),new RecipeItem("37",7)],true);
 
-    let foodList = [oatmeal, steak, honeycombCookie, desertDumpling, beer, teaWithFineScent, meatCroquette, meatStew, liquorEssence, whiteSauce, redSauce, omelete, boiledEgg, softBread, friedFish, fruitPudding, gratinCheese, organicFeed, fishFilletChips, grilledSausage, meatPie, honeyWine];
+    let foodList = [oatmeal, steak, honeycombCookie, desertDumpling, beer, teaWithFineScent, suteTea, meatCroquette, meatStew, liquorEssence, pickledVegetables, seafoodPasta,
+                   whiteSauce, redSauce, omelete, boiledEgg, softBread, friedFish, fruitPudding, darkPudding, gratinCheese, organicFeed, fishFilletChips, grilledSausage,
+                   meatPie, vinegar, honeyWine];
     sessionStorage.setItem('foodList', JSON.stringify(foodList));
 
     /* Must be added following ID order */
     let foods = [beer, organicFeed, boiledEgg, oatmeal, friedFish, fishFilletChips, meatStew, omelete, honeycombCookie, teaWithFineScent, steak, fruitPudding, 
-                  softBread, meatPie, whiteSauce,redSauce,meatCroquette,gratinCheese,grilledSausage,desertDumpling, honeyWine, liquorEssence];
+                softBread, meatPie, whiteSauce,redSauce,meatCroquette,gratinCheese,desertDumpling, honeyWine, liquorEssence, grilledSausage, seafoodPasta, 
+                suteTea,vinegar, pickledVegetables,darkPudding];
     sessionStorage.setItem('foods', JSON.stringify(foods)); 
   }
   
   createIngredients(){
-    let cereal = new FoodIngredient ("0","Cereais","assets/img/foodAndIgredients/corn.png", true, [{"id":"0","qty":5},{"id":"7","qty":5}]);
+    let cereal = new FoodIngredient ("0","Cereais","assets/img/foodAndIgredients/corn.png", true, [new RecipeItem("0",5),new RecipeItem("7",5)]);
     let mineralWater = new FoodIngredient("1","Água Mineral","assets/img/foodAndIgredients/mineralWater.png", false, undefined);
     let sugar = new FoodIngredient("2","Açúcar","assets/img/foodAndIgredients/sugar.png",false, undefined);
-    let oatmeal = new FoodIngredient("3","Aveia","assets/img/foodAndIgredients/oatmealA.png",true, [{"id":"1","qty":2},{"id":"13","qty":2}]);
-    let meat = new FoodIngredient("4","Carne","assets/img/foodAndIgredients/meat.png",true, [{"id":"10","qty":8},{"id":"6","qty":5},{"id":"1","qty":5},{"id":"13","qty":4}]);
-    let driedFish = new FoodIngredient("5","Peixe Desidratado","assets/img/foodAndIgredients/driedFish.png",true,[{"id":"1","qty":2},{"id":"4","qty":2},{"id":"5","qty":2}]);
+    let oatmeal = new FoodIngredient("3","Aveia","assets/img/foodAndIgredients/oatmealA.png",true, [new RecipeItem("1",2),new RecipeItem("13",2),new RecipeItem("26",1)]);
+    let meat = new FoodIngredient("4","Carne","assets/img/foodAndIgredients/meat.png",true, [new RecipeItem("10",8),new RecipeItem("6",5),new RecipeItem("1",5),new RecipeItem("13",4)]);
+    let driedFish = new FoodIngredient("5","Peixe Desidratado","assets/img/foodAndIgredients/driedFish.png",true,[new RecipeItem("1",2),new RecipeItem("4",2),new RecipeItem("5",2)]);
     let leavingAgent = new FoodIngredient("6","Fermento","assets/img/foodAndIgredients/leavingAgent.png",false, undefined);
-    let birdMeat = new FoodIngredient("7","Carne de Pássaro","assets/img/foodAndIgredients/birdMeat.png",true, [{"id":"1","qty":4}]);
+    let birdMeat = new FoodIngredient("7","Carne de Pássaro","assets/img/foodAndIgredients/birdMeat.png",true, [new RecipeItem("1",4),new RecipeItem("26",5)]);
     let flour = new FoodIngredient("8","Farinha","assets/img/foodAndIgredients/flour.png",false, undefined);
-    let milk = new FoodIngredient("9","Leite","assets/img/foodAndIgredients/milk.png",true, [{"id":"12","qty":3},{"id":"11","qty":3},{"id":"3","qty":3},{"id":"3","qty":3}]);
+    let milk = new FoodIngredient("9","Leite","assets/img/foodAndIgredients/milk.png",true, [new RecipeItem("12",3),new RecipeItem("11",3),new RecipeItem("3",3),new RecipeItem("23",3),new RecipeItem("8",4)]);
     let onion = new FoodIngredient("10","Cebola","assets/img/foodAndIgredients/onion.png",false, undefined);
-    let honey = new FoodIngredient("11","Mel","assets/img/foodAndIgredients/honey.png",true, [{"id":"9","qty":3},{"id":"8","qty":6},{"id":"3","qty":3},{"id":"3","qty":2}]);
+    let honey = new FoodIngredient("11","Mel","assets/img/foodAndIgredients/honey.png",true, [new RecipeItem("9",3),new RecipeItem("8",6),new RecipeItem("3",2)]);
     let wine = new FoodIngredient("12","Vinho","assets/img/foodAndIgredients/wine.png",false, undefined);
     let salt = new FoodIngredient("13","Sal","assets/img/foodAndIgredients/salt.png",false, undefined);
-    let egg = new FoodIngredient("14","Ovos de Pássaro","assets/img/foodAndIgredients/egg.png",true, [{"id":"2","qty":3},{"id":"7","qty":5},{"id":"8","qty":2},{"id":"12","qty":2}]);
+    let egg = new FoodIngredient("14","Ovos de Pássaro","assets/img/foodAndIgredients/egg.png",true, [new RecipeItem("2",3),new RecipeItem("7",5),new RecipeItem("8",2),new RecipeItem("12",2)]);
     let fryingOil = new FoodIngredient("15","Oleo para Fritura","assets/img/foodAndIgredients/fryingOil.png",false, undefined);  
-    let whiteSauce = new FoodIngredient("16","Molho Branco","assets/img/foodAndIgredients/whiteSauce.png",true, [{"id":"5","qty":3}]);       
+    let whiteSauce = new FoodIngredient("16","Molho Branco","assets/img/foodAndIgredients/whiteSauce.png",true, [new RecipeItem("5",3)]);       
     let oliveOil = new FoodIngredient("17","Oleo de Oliva","assets/img/foodAndIgredients/oliveOil.png",false, undefined);       
-    let rough = new FoodIngredient("18","Massa","assets/img/foodAndIgredients/rough.png",false, [{"id":"13","qty":6},{"id":"12","qty":6},{"id":"8","qty":4}]);
+    let rough = new FoodIngredient("18","Massa","assets/img/foodAndIgredients/rough.png",false, [new RecipeItem("13",6),new RecipeItem("12",6),new RecipeItem("8",4)]);
     let plants = new FoodIngredient("19","Plantas","assets/img/foodAndIgredients/rose.png",false, undefined);
-    let fruit = new FoodIngredient("20","Frutas","assets/img/foodAndIgredients/apple.png", true, [{"id":"11","qty":5},{"id":"9","qty":4}]);
+    let fruit = new FoodIngredient("20","Frutas","assets/img/foodAndIgredients/apple.png", true, [new RecipeItem("11",5),new RecipeItem("9",4)]);
     let garlic = new FoodIngredient("21","Alho","assets/img/foodAndIgredients/garlic.png",false, undefined);
-    let redSauce = new FoodIngredient("22","Molho Vermelho","assets/img/foodAndIgredients/redSauce.png",true, [{"id":"10","qty":2}]);
+    let redSauce = new FoodIngredient("22","Molho Vermelho","assets/img/foodAndIgredients/redSauce.png",true, [new RecipeItem("10",2)]);
     let cream = new FoodIngredient("23","Creme","assets/img/foodAndIgredients/cream.png",false, undefined);
     let baseSauce = new FoodIngredient("24", "Molho Veid", "assets/img/foodAndIgredients/baseSauce.png",false, undefined);
     let cheese = new FoodIngredient("25", "Queijo", "assets/img/foodAndIgredients/cheese.png",false, undefined);
     let pepper = new FoodIngredient("26", "Pimenta do Reino", "assets/img/foodAndIgredients/pepper.png",false, undefined);
-    let grilledSausage = new FoodIngredient("27","Salsicha Grelhada","assets/img/foodAndIgredients/grilledSausage.png",true, [{"id":"17","qty":1}]);
+    let grilledSausage = new FoodIngredient("27","Salsicha Grelhada","assets/img/foodAndIgredients/grilledSausage.png",true, [new RecipeItem("17",1)]);
     let cabbage = new FoodIngredient("28","Legumes","assets/img/foodAndIgredients/cabbage.png",false, undefined);
-    let lizardMeat = new FoodIngredient("29","Carne de Réptil","assets/img/foodAndIgredients/lizardMeat.png",true,[{"id":"18","qty":6}]);
+    let lizardMeat = new FoodIngredient("29","Carne de Réptil","assets/img/foodAndIgredients/lizardMeat.png",true,[new RecipeItem("18",6)]);
     let cinnamon = new FoodIngredient("30","Canela","assets/img/foodAndIgredients/cinnamon.png",false, undefined);
-    let liquorEssence = new FoodIngredient("31","Essência de Liquor","assets/img/foodAndIgredients/liquorEssence.png",true,[{"id":"19","qty":2}]);
+    let liquorEssence = new FoodIngredient("31","Essência de Liquor","assets/img/foodAndIgredients/liquorEssence.png",true,[new RecipeItem("19",2)]);
+    let seafood = new FoodIngredient("32","Frutos do Mar","assets/img/foodAndIgredients/seafood.png",true,[new RecipeItem("22",4)]);
+    let butter = new FoodIngredient("33","Manteiga","assets/img/foodAndIgredients/butter.png",false,undefined);
+    let teaWithFineScent = new FoodIngredient("34", "Chá com Aroma Fino", "assets/img/foodAndIgredients/teaWithFineScent.png", false,undefined);
+    let vinegar = new FoodIngredient("35","Vinagre","assets/img/foodAndIgredients/vinegar.png", false, undefined);
+    let pickledVegetables = new FoodIngredient("36","Legumes em Conserva","assets/img/foodAndIgredients/pickledVegetables.png",false,undefined);
+    let blood = new FoodIngredient("37","Sangue","assets/img/foodAndIgredients/blood.png",true,[new RecipeItem("26",7)]);
 
-    let ingredientsList = [oatmeal,meat,birdMeat,lizardMeat,cereal,liquorEssence,fruit,milk,rough,honey,whiteSauce,redSauce,egg,driedFish,grilledSausage];
+    let ingredientsList = [oatmeal,meat,birdMeat,lizardMeat,cereal,liquorEssence,fruit,milk,rough,honey,seafood,whiteSauce,redSauce,egg,
+                          driedFish,grilledSausage,blood];
     sessionStorage.setItem('ingredientsList', JSON.stringify(ingredientsList));    
     
     /* Must be added following ID order */
     let ingredients = [cereal,mineralWater,sugar,oatmeal,meat,driedFish,leavingAgent,birdMeat,flour,milk,onion,honey,wine,salt,egg,
       fryingOil,whiteSauce,oliveOil,rough,plants,fruit,garlic,redSauce,cream,baseSauce,cheese,pepper,grilledSausage,cabbage,lizardMeat,
-      cinnamon, liquorEssence];
+      cinnamon, liquorEssence, seafood, butter,teaWithFineScent,vinegar, pickledVegetables, blood];
     sessionStorage.setItem('ingredients', JSON.stringify(ingredients));
   }
 
@@ -149,8 +169,12 @@ export class HomePage {
       new ImperialItem("9","Baú de Torta de Carne","assets/img/imperialItems/meatPieCookingBox.png","Profissional",local,"13",30, true, 210000),
       new ImperialItem("10","Baú de Croquete de Carne","assets/img/imperialItems/meatCroquetteCookingBox.png","Artesão",local,"16",40, true, 410000),
       new ImperialItem("11","Baú de Queijo Gratinado","assets/img/imperialItems/cheeseGratinCookingBox.png","Artesão",local,"17",40, true, 410000),
-      new ImperialItem("12","Báu de Bolinho do Deserto","assets/img/imperialItems/desertDumplingCookingBox.png","Artesão",local,"18",40,true,277500),
-      new ImperialItem("13","Báu de Vinho de Mel","assets/img/imperialItems/honeyWineCookingBox.png","Artesão",local,"19",50,true,190000),
+      new ImperialItem("12","Baú de Bolinho do Deserto","assets/img/imperialItems/desertDumplingCookingBox.png","Artesão",local,"18",40,true,277500),
+      new ImperialItem("13","Baú de Vinho de Mel","assets/img/imperialItems/honeyWineCookingBox.png","Artesão",local,"19",50,true,190000),
+      new ImperialItem("14","Baú de Macarrão de Frutos do Mar","assets/img/imperialItems/seafoodPastaCookingBox.png","Mestre",local,"22",40,true,3250000),
+      new ImperialItem("15","Baú de Biscoito de Mel","assets/img/imperialItems/honeycombCookieCookingBox.png","Mestre",local,"8",40,true,362500),
+      new ImperialItem("16","Baú de Chá Mate","assets/img/imperialItems/suteTeaCookingBox.png","Mestre",local,"23",60,true,472500),
+      new ImperialItem("17","Baú de Pudim Escuro","assets/img/imperialItems/darkPuddingCookingBox.png","Mestre",local,"26",60,true,472500), 
     ];
     sessionStorage.setItem('imperialCookingList', JSON.stringify(imperialCookingList));   
   }
